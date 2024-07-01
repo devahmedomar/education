@@ -1,5 +1,5 @@
 import { Component ,HostListener, } from '@angular/core';
-
+import { RouterLinkActive } from '@angular/router';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -7,7 +7,7 @@ import { Component ,HostListener, } from '@angular/core';
 })
 export class NavbarComponent {
   isScrolled: boolean = false;
-
+  
   @HostListener('window:scroll', [])
   onWindowScroll() {
     // Detect if user has scrolled down 100px from the top

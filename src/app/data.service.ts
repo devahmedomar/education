@@ -7,14 +7,27 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class DataService {
-
-  constructor(public http:HttpClient) {
-
+  tid :string ='';
+  constructor(public _HttpClient:HttpClient) {
+    
    }
-  getNewsData():Observable<any> {
-    return this.http.get("http://51.20.43.250:8000/news/")
+   
+   getTrainersData():Observable<any>
+   {
+    return this._HttpClient.get("http://51.20.43.250:8000/trainers/")
+   }
+   getEduRoutesData():Observable<any>
+   {
+    return this._HttpClient.get("http://51.20.43.250:8000/eduroutes/")
+    }
+  getNewsData():Observable<any> 
+  {
+    return this._HttpClient.get("http://51.20.43.250:8000/news/")
   }
 
-
+  getTrainerDetails(id:string):Observable<any>
+  {
+    return this._HttpClient.get('http://51.20.43.250:8000/trainers/${id}')
+  }
 
 }

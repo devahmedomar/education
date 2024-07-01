@@ -25,13 +25,23 @@
     padding: 20px 12px;
 }
 
-.trianerInfo p 
+.trianerInfo h5 
 {
     font-weight: 600;
     font-size: 16px;
     letter-spacing: 2%;
     line-height: 29.9px;
+    color: #33312C;
 }
+.trianerInfo p
+{
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 2%;
+    line-height: 26.24px;
+    color: gray;
+}
+
 .col-md-8
 {
     padding: 0px !important;
@@ -43,7 +53,9 @@
     width: 100%  !important;
     margin:0px;
     padding: 0px;
+    cursor: pointer;
 }
+
 .tabs li
 {
     margin-right: 20px;
@@ -55,11 +67,12 @@
     color: gray;
     line-height: 29.98px;
 }
-.stand
+.section.active 
 {
     color: #33312C    !important;
-    border-bottom: 1px solid #33312C    ;
-}
+    border-bottom: 1px solid #33312C   
+;}
+
 .coursesImage
 {
     background-color: black;

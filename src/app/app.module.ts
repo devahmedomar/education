@@ -72,7 +72,8 @@ import { CommonModule } from '@angular/common';
     AccordionModule,
     FormsModule,
     HttpClientModule,
-    CommonModule
+    CommonModule,
+    
   ],
   // providers: [serviceLog],
   bootstrap: [AppComponent]

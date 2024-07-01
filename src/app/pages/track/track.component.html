@@ -3,7 +3,7 @@
             <div class="col-md-6">
                 <div class="d-flex  py-2">
                     <h5>المسارات التعلمية /  </h5>
-                    <h5 class="mx-2"> مسار السياحة   </h5>
+                    <h5 class="mx-2">{{eduRoutesData.title}}</h5>
                 </div>
             </div>
             <div class="row trainingLinesBackground">
@@ -156,26 +156,11 @@
     <div class="row py-3">
         <h4>مدربين المسار</h4>
         <div class="col-md-6 d-flex py-2">
-            <a routerLink class="trianerInfo mx-2">
-                 <img src="/assets/images/trainer1.png">
-                <p>محمود مح</p>
+            <a *ngFor="let trainer of eduTrainers" routerLink="/trainer" class="trianerInfo mx-2">
+                 <img src="">
+                <p class="bg-info">{{trainer.name}}</p>
             </a>
-            <a routerLink="/trainer" class="trianerInfo mx-2">
-                <img src="/assets/images/trainer2.png">
-                <p>شهاب أحم.</p>
-           </a>
-           <a routerLink="/trainer" class="trianerInfo mx-2">
-                <img src="/assets/images/trainer3.png">
-                <p>سيد أحمد</p>
-            </a>
-            <a routerLink="/trainer" class="trianerInfo mx-2">
-               <img src="/assets/images/trainer4.png">
-               <p>عبدالرحمن ع.</p>
-            </a>
-            <a routerLink="/trainer" class="trianerInfo mx-2">
-                 <img src="/assets/images/trainer5.png">
-                <p>عبدالله عبدا.</p>
-            </a>
+    
         </div>
     </div>
 </div>

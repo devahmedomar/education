@@ -11,7 +11,6 @@ export class ArticlesComponent {
   constructor(public data:DataService) {
    data.getNewsData().subscribe((value)=>{
     this.NewsData = value.data;
-    console.log(this.NewsData);
 
 
    })

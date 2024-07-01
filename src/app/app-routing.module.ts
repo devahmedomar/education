@@ -14,9 +14,13 @@ import { TeamComponent } from './pages/team/team.component';
 import { UsagePolicyComponent } from './pages/usage-policy/usage-policy.component';
 import { LicensesComponent } from './pages/licenses/licenses.component';
 import { ArticlesPagePreviewComponent } from './pages/articles-page-preview/articles-page-preview.component';
+
 const routes: Routes = [
   {
-      path:'',
+    path:'', redirectTo:'home', pathMatch:'full'
+  },
+  {
+      path:'home',
       component:HomeComponent
   },
   {
@@ -81,14 +85,17 @@ const routes: Routes = [
     path:'articles-perview',
     component:ArticlesPagePreviewComponent
   },
-
+  {
+    path:'lines',
+    component:HomeComponent
+  }
 ];
 
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {
     enableTracing:false,
-    scrollPositionRestoration:"top",
+    scrollPositionRestoration:"enabled",
   })
 
   ],

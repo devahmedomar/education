@@ -10,6 +10,7 @@ nav
 .scroll-background {
   background-color: white; /* Initial background color */
 }
+
 .navedit
 {
   width: 92%  !important;
@@ -31,6 +32,15 @@ nav
   padding-top: 0px ;
   padding-bottom: 0px;
   opacity: 40%;
+}
+.active-link a
+{
+  color: black;
+  opacity: 100% !important;
+}
+.nav-item.active {
+  color: teal !important;
+  font-weight: bold;
 }
 @media screen and (max-width: 574px)
 {
