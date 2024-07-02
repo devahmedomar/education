@@ -35,6 +35,8 @@ import { JionUSasCompanyComponent } from './pages/jion-usas-company/jion-usas-co
 import { serviceLog } from './pages/team/team.service';
 import {  HttpClientModule} from "@angular/common/http"
 import { CommonModule } from '@angular/common';
+import { TabViewModule } from 'primeng/tabview';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -73,7 +75,7 @@ import { CommonModule } from '@angular/common';
     FormsModule,
     HttpClientModule,
     CommonModule,
-    
+    TabViewModule
   ],
   // providers: [serviceLog],
   bootstrap: [AppComponent]

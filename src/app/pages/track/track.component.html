@@ -156,9 +156,13 @@
     <div class="row py-3">
         <h4>مدربين المسار</h4>
         <div class="col-md-6 d-flex py-2">
-            <a *ngFor="let trainer of eduTrainers" routerLink="/trainer" class="trianerInfo mx-2">
-                 <img src="">
-                <p class="bg-info">{{trainer.name}}</p>
+            <a class="text-center d-flex justify-content-center" *ngFor="let trainer of eduTrainers"  class="trianerInfo mx-2">
+               <div class="lineTrainers" [routerLink]="['/trainers', trainer.tid]">
+                    <div class="imageContainer text-center  ">
+                        <img [src]="trainer.image" alt="trainer-image" class="img-fluid">
+                    </div>
+                    <p class="">{{trainer.name}}</p>
+               </div>
             </a>
     
         </div>

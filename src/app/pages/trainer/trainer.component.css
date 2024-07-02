@@ -24,7 +24,13 @@
     border-radius: 8px;
     padding: 20px 12px;
 }
+.trainerProfile img
+{
+    width:80px;
+    height:80px ;
+    border-radius:61.54px ;
 
+}
 .trianerInfo h5 
 {
     font-weight: 600;
@@ -67,7 +73,7 @@
     color: gray;
     line-height: 29.98px;
 }
-.section.active 
+a.active 
 {
     color: #33312C    !important;
     border-bottom: 1px solid #33312C   

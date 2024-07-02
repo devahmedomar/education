@@ -42,6 +42,12 @@ nav
   color: teal !important;
   font-weight: bold;
 }
+nav a.active
+{
+  
+  color: black !important;
+  opacity: 100%   !important;
+}
 @media screen and (max-width: 574px)
 {
   .collapse

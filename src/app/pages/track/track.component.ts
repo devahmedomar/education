@@ -14,11 +14,11 @@ export class TrackComponent {
   {
     this._DataService.getEduRoutesData().subscribe((info)=>{
       this.eduRoutesData = info.data[0];
-      this.eduTrainers = info.data[0].trainers[0];
-      console.log(this.eduTrainers)
-      this.trainerImg = this.eduRoutesData.image;
+      this.eduTrainers = info.data[0].trainers;
+     
+      this.trainerImg = this.eduTrainers;
 
-      console.log(this.eduRoutesData)  
+    
     })
   }
   handleClick(index: number) {

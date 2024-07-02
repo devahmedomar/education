@@ -14,6 +14,7 @@ import { TeamComponent } from './pages/team/team.component';
 import { UsagePolicyComponent } from './pages/usage-policy/usage-policy.component';
 import { LicensesComponent } from './pages/licenses/licenses.component';
 import { ArticlesPagePreviewComponent } from './pages/articles-page-preview/articles-page-preview.component';
+import { TrainingLinesComponent } from './sections/training-lines/training-lines.component';
 
 const routes: Routes = [
   {
@@ -52,8 +53,14 @@ const routes: Routes = [
     component:JionUSasCompanyComponent
   },
   {
-    path:'trainers',
+    path:'trainers/:id',
     component:TrainerComponent
+  },
+  {
+    
+      path:'trainers',
+      component:TrainerComponent
+    
   },
   {
     path:'articles',
@@ -87,7 +94,7 @@ const routes: Routes = [
   },
   {
     path:'lines',
-    component:HomeComponent
+    component:TrainingLinesComponent
   }
 ];
 

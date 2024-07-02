@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { DataService } from 'src/app/data.service';
 @Component({
   selector: 'app-training-lines',
@@ -6,6 +6,8 @@ import { DataService } from 'src/app/data.service';
   styleUrls: ['./training-lines.component.css']
 })
 export class TrainingLinesComponent {
+
+ 
   eduRoutes :any = [];
   constructor(public _DataService:DataService )
   {

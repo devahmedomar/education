@@ -16,117 +16,118 @@
             </div>
         </div>
         <div  class="col-md-8 ">
-                <div class="tabs">
-                    <ul class="d-flex">
-                        <li class="section" [class.active]="currentTab === 'section1'" (click)="navigateToSection('section1')"><a    class="stand">الشهادات العلمية</a></li>
-                        <li class="section" [class.active]="currentTab === 'section2'" (click)="navigateToSection('section2')"><a   class="stand">الإعتمادات</a></li>
-                        <li class="section" [class.active]="currentTab === 'section3'" (click)="navigateToSection('section3')"> <a   class="stand">الخبرات السابقة</a></li>
-                        <li class="section" [class.active]="currentTab === 'section4'" (click)="navigateToSection('section4')"><a   class="stand">الجهات التي درب معاها سابقا</a></li>
-                        <li class="section" [class.active]="currentTab === 'section5'" (click)="navigateToSection('section5')"><a   class="stand">الدورات الحالية التي يقدمها المدرب</a></li>
-                    </ul>
+ 
+    <div class="tabs">
+        <ul class="d-flex">
+            <li class="section"  ><a  [class.active]="currentSection === 'section1'" (click)="navigateToSection('section1')"  >الشهادات العلمية</a></li>
+            <li class="section" ><a   [class.active]="currentSection === 'section2'" (click)="navigateToSection('section2')">الإعتمادات</a></li>
+            <li class="section" > <a  [class.active]="currentSection === 'section3'" (click)="navigateToSection('section3')">الخبرات السابقة</a></li>
+            <li class="section" ><a   [class.active]="currentSection === 'section4'" (click)="navigateToSection('section4')">الجهات التي درب معاها سابقا</a></li>
+            <li class="section" ><a   [class.active]="currentSection === 'section5'" (click)="navigateToSection('section5')">الدورات الحالية التي يقدمها المدرب</a></li>
+        </ul>
+    </div>
+    <div   id="section1" *ngIf="currentSection === 'section1'" class="certificates py-3 px-4">
+        <ul>
+            <li class="py-2" *ngFor="let trainer of trainersData.certifications">
+                <a  href="">{{trainer}} <i class="pi pi-arrow-up-left mx-2"></i></a> 
+            </li>
+        </ul>
+    </div>
+    <div id="section2" *ngIf="currentSection === 'section2'" class="certificates py-3 px-4">
+        <ul>
+            <li  class="py-2">
+                <a [attr.href]="trainerCv" >CV</a> 
+            </li>
+        </ul>
+    </div>
+    <div id="section3" *ngIf="currentSection === 'section3'" class="certificates pt-4 px-4">
+        <ul>
+            <li class="py-2" *ngFor="let trainer of trainersData.experience">
+                <a >{{trainer}} </a> 
+            </li>
+        
+        
+        </ul>
+    </div>
+    <div id="section4" *ngIf="currentSection === 'section4'" class="certificates pt-4 px-4">
+        <div class="row pt-3">
+            <div class="col-md-3  m-0 p-0" *ngFor="let trainer of trainersData.previous_training_com">
+                <div class="places d-flex ">
+                    <img src="/assets/images/placeicon.svg" class=" img-fluid">
+                    <p class=" pt-1 px-2">{{trainer}}<span class="px-1">(خمس سنين خبرة)</span></p>
                 </div>
-                <div   id="section1" *ngIf="currentSection === 'section1'" class="certificates py-3 px-4">
-                    <ul>
-                        <li class="py-2" *ngFor="let trainer of trainersData.certifications">
-                            <a  href="">{{trainer}} <i class="pi pi-arrow-up-left mx-2"></i></a> 
-                        </li>
-                    </ul>
+            </div>
+        </div>
+    </div>
+    <div id="section5" *ngIf="currentSection === 'section5'" class="row pt-3 px-2">
+        <div class="col-md-6  trainerContainer px-3 py-3">
+            <div class="row    pt-2">
+                <div class="col-md-1 ">
+                    <div class="coursesImage">
+                        
+                    </div>
                 </div>
-                <div id="section2" *ngIf="currentSection === 'section2'" class="certificates py-3 px-4">
-                    <ul>
-                        <li  class="py-2">
-                            <a [attr.href]="trainerCv" >CV</a> 
-                        </li>
-                    </ul>
-                </div>
-                <div id="section3" *ngIf="currentSection === 'section3'" class="certificates pt-4 px-4">
-                    <ul>
-                        <li class="py-2" *ngFor="let trainer of trainersData.experience">
-                            <a >{{trainer}} </a> 
-                        </li>
-                       
-                       
-                    </ul>
-                </div>
-                <div id="section4" *ngIf="currentSection === 'section4'" class="certificates pt-4 px-4">
-                    <div class="row pt-3">
-                        <div class="col-md-3  m-0 p-0" *ngFor="let trainer of trainersData.previous_training_com">
-                            <div class="places d-flex ">
-                                <img src="/assets/images/placeicon.svg" class=" img-fluid">
-                                <p class=" pt-1 px-2">{{trainer}}<span class="px-1">(خمس سنين خبرة)</span></p>
-                            </div>
+                <div class="col-md-5   offset-md-1    ">
+                    <div class="courseData px-2">
+                        <h5>اسم الدورة</h5>
+                        <div class="d-flex courseTime">
+                            <p>14 يوم . </p>
+                            <p>12 ساعة</p>
                         </div>
                     </div>
                 </div>
-                <div id="section5" *ngIf="currentSection === 'section5'" class="row pt-3 px-2">
-                    <div class="col-md-6  trainerContainer px-3 py-3">
-                        <div class="row    pt-2">
-                            <div class="col-md-1 ">
-                                <div class="coursesImage">
-                                    
-                                </div>
-                            </div>
-                            <div class="col-md-5   offset-md-1    ">
-                                <div class="courseData px-2">
-                                    <h5>اسم الدورة</h5>
-                                    <div class="d-flex courseTime">
-                                        <p>14 يوم . </p>
-                                        <p>12 ساعة</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-5 showDetails  ">
-                                <a routerLink="/trainer">عرض التفاصيل</a>
-                            </div>
-                        </div>
-                    </div>
+                <div class="col-md-5 showDetails  ">
+                    <a routerLink="/trainer">عرض التفاصيل</a>
+                </div>
+            </div>
+        </div>
 
 
 
-                    <div class="col-md-6  trainerContainer px-3 py-3">
-                        <div class="row    pt-2">
-                            <div class="col-md-1 ">
-                                <div class="coursesImage">
-                                </div>
-                            </div>
-                            <div class="col-md-5   offset-md-1    ">
-                                <div class="courseData px-2">
-                                    <h5>اسم الدورة</h5>
-                                    <div class="d-flex courseTime">
-                                        <p>14 يوم . </p>
-                                        <p>12 ساعة</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-5 showDetails  ">
-                                <a routerLink="/trainer">عرض التفاصيل</a>
-                            </div>
-                        </div>
+        <div class="col-md-6  trainerContainer px-3 py-3">
+            <div class="row    pt-2">
+                <div class="col-md-1 ">
+                    <div class="coursesImage">
                     </div>
-                    <div class="col-md-6  trainerContainer px-3 py-1">
-                        <div class="row    pt-2">
-                            <div class="col-md-1 ">
-                                <div class="coursesImage">
-                                    
-                                </div>
-                            </div>
-                            <div class="col-md-5   offset-md-1    ">
-                                <div class="courseData px-2">
-                                    <h5>اسم الدورة</h5>
-                                    <div class="d-flex courseTime">
-                                        <p>14 يوم . </p>
-                                        <p>12 ساعة</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-5 showDetails  ">
-                                <a routerLink="/trainer">عرض التفاصيل</a>
-                            </div>
+                </div>
+                <div class="col-md-5   offset-md-1    ">
+                    <div class="courseData px-2">
+                        <h5>اسم الدورة</h5>
+                        <div class="d-flex courseTime">
+                            <p>14 يوم . </p>
+                            <p>12 ساعة</p>
                         </div>
                     </div>
                 </div>
+                <div class="col-md-5 showDetails  ">
+                    <a routerLink="/trainer">عرض التفاصيل</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6  trainerContainer px-3 py-1">
+            <div class="row    pt-2">
+                <div class="col-md-1 ">
+                    <div class="coursesImage">
+                        
+                    </div>
+                </div>
+                <div class="col-md-5   offset-md-1    ">
+                    <div class="courseData px-2">
+                        <h5>اسم الدورة</h5>
+                        <div class="d-flex courseTime">
+                            <p>14 يوم . </p>
+                            <p>12 ساعة</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5 showDetails  ">
+                    <a routerLink="/trainer">عرض التفاصيل</a>
+                </div>
+            </div>
+        </div>
+    </div>        
+            
         </div>
     </div>
 </div>
 
- 

@@ -28,16 +28,16 @@
         <div class="col-md-8 pt-1">
             <div class="tabs ">
                 <ul class="d-flex ">
-                    <li class="section" [class.active]="currentTab === 'section1'" (click)="navigateToSection('section1')"><a  class="">تفاصيل الدورة</a></li>
-                    <li class="section" [class.active]="currentTab === 'section2'" (click)="navigateToSection('section2')"><a >الأهداف</a></li>
-                    <li class="section" [class.active]="currentTab === 'section3'" (click)="navigateToSection('section3')"><a > المحاور</a></li>
-                    <li class="section" [class.active]="currentTab === 'section4'" (click)="navigateToSection('section4')"><a >مكان و موعد إقامة الدورة</a></li>
+                    <li class="section" ><a  [class.active]="currentSection === 'section1'" (click)="navigateToSection('section1')">تفاصيل الدورة</a></li>
+                    <li class="section"><a   [class.active]="currentSection === 'section2'" (click)="navigateToSection('section2')">الأهداف</a></li>
+                    <li class="section"><a  [class.active]="currentSection === 'section3'" (click)="navigateToSection('section3')"> المحاور</a></li>
+                    <li class="section"><a  [class.active]="currentSection === 'section4'" (click)="navigateToSection('section4')">مكان و موعد إقامة الدورة</a></li>
                 </ul>    
             </div>
             <div class="paragContainer" id="section1" *ngIf="currentSection === 'section1'">
                 <p>هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي  القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة  التي يقرأها هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي  القارئ.</p>
             </div>
-            <div id="section2" *ngIf="currentSection === 'section2'" >
+            <div class="paragContainer" id="section2" *ngIf="currentSection === 'section2'" >
                 <div class="paragContainer pt-3 d-flex">
                     <div class="goals d-flex w-25 ">
                         <i class="fa-solid fa-circle-check pt-2 "></i>

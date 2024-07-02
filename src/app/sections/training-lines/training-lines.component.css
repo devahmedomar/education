@@ -3,7 +3,9 @@
     padding-left: 4.9%;
     padding-right: 4.9%;
 }
-
+ section .active-section {
+    border: 2px solid blue; /* Example: Highlight active section */
+  }
 .edulines h4
 {
     font-weight: 600;

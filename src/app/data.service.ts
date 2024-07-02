@@ -7,7 +7,6 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class DataService {
-  tid :string ='';
   constructor(public _HttpClient:HttpClient) {
     
    }
@@ -27,7 +26,7 @@ export class DataService {
 
   getTrainerDetails(id:string):Observable<any>
   {
-    return this._HttpClient.get('http://51.20.43.250:8000/trainers/${id}')
+    return this._HttpClient.get(`http://51.20.43.250:8000/trainers/${id}/`)
   }
 
 }

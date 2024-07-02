@@ -13,13 +13,16 @@ export class TrainerComponent {
   trainersData :any = [];
   trainerCv :string='' ;
   trainerImg :string='' ;
+  id:string = '';
 
-  constructor (public _DataService:DataService){
-    this._DataService.getTrainersData().subscribe((info)=>{
-      this.trainersData = info.data[0];
+  constructor (public _ActivatedRoute:ActivatedRoute, public _DataService:DataService){
+    this.id=this._ActivatedRoute.snapshot.params['id'];
+    console.log(this.id);
+
+    this._DataService.getTrainerDetails(this.id).subscribe((info)=>{
+      this.trainersData = info.data; 
       this.trainerCv = this.trainersData.cv;
       this.trainerImg = this.trainersData.image;
-      console.log(this.trainersData);
     })
 
    
@@ -28,7 +31,6 @@ export class TrainerComponent {
 
   navigateToSection(section: string) {
     this.currentSection = section;
-    console.log('setting active tab',this.currentSection)
   }
   setCurrentTab(section: string) {
     this.currentTab = section;

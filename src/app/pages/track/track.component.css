@@ -126,6 +126,28 @@
     line-height: 29.9px;
     color: black;
 }
+.lineTrainers
+{
+}
+.lineTrainers p
+{
+    text-align: center;
+    font-weight: 600;
+    font-size:16px ;
+    color: black !important;
+    line-height: 29.28px;
+    letter-spacing: 2%;
+}
+.imageContainer
+{
+   
+}
+.imageContainer img
+{
+    border-radius: 61.43px;
+    width:80px !important ;
+    height: 80px !important;
+}
 @media screen and (min-width: 768px )and (max-width:1140px)
 {
    

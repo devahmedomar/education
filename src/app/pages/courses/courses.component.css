@@ -86,11 +86,11 @@
     color: gray;
     line-height: 29.98px;
 }
-.stand
+a.active 
 {
     color: #33312C    !important;
-    border-bottom: 1px solid #33312C    ;
-}
+    border-bottom: 1px solid #33312C   
+;}
 .paragContainer
 {
     font-size: 14px;
