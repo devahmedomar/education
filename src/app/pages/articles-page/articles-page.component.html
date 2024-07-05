@@ -10,111 +10,31 @@
   </div>
 
     <div class="row gy-2 ">
-      <div class="col-lg-4 col-md-6 col-sm-12">
-       <a routerLink="/articles-perview">
+      <div *ngFor="let item of NewsData"  class="col-lg-4 col-md-6 col-sm-12">
+       <a [routerLink]="['/articles-perview',item.nid]">
         <div class="card" >
           <div class="card-body">
-            <img class="w-100" src="assets/images/Rectangle 21922.png"  alt="...">
-            <div class="clock">  <i class="fa-regular fa-clock"></i> <span>منذ ساعة </span></div>
-            <h2 class="card-title">هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء</h2>
-            <p class="card-text">هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي  القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة  التي يقرأها.</p>
+            <div class="image-container">
+               <img class="w-100" [src]="item.image"  alt="...">
+            </div>
+
+            <div class="clock">  <i class="fa-regular fa-clock"></i> <span>{{item.date}}</span></div>
+            <h2 class="card-title">{{item.title}}</h2>
+            <p class="card-text"> {{item.description}}</p>
             <div class="readMore">قراءة المزيد..</div>
 
           </div>
         </div>
        </a>
       </div>
-      <div class="col-lg-4 col-md-6 col-sm-12">
-        <div class="card" >
 
 
-          <div class="card-body">
-            <img src="assets/images/Rectangle 21922.png" class="card-img-top" alt="...">
-            <div class="clock">   <i class="fa-regular fa-clock"></i><span>منذ ساعة </span></div>
-            <h2 class="card-title">هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء</h2>
-            <p class="card-text">هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي  القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة  التي يقرأها.</p>
-            <div class="readMore">قراءة المزيد..</div>
 
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 col-sm-12">
-        <div class="card" >
-          <div class="card-body" routerLink="articles-perview">
-            <img src="assets/images/Rectangle 21922.png" class="card-img-top" alt="...">
-            <div class="clock"> <i class="fa-regular fa-clock"></i>  <span>منذ ساعة </span></div>
-            <h2 class="card-title">هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء</h2>
-            <p class="card-text">هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي  القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة  التي يقرأها.</p>
-            <div class="readMore">قراءة المزيد..</div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 col-sm-12">
-        <div class="card">
-          <div class="card-body">
-            <img src="assets/images/Rectangle 21922.png" class="card-img-top" alt="...">
-            <div class="clock"> <i class="fa-regular fa-clock"></i>  <span>منذ ساعة </span></div>
-            <h2 class="card-title">هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء</h2>
-            <p class="card-text">هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي  القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة  التي يقرأها.</p>
-            <div class="readMore">قراءة المزيد..</div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 col-sm-12">
-        <div class="card">
-          <div class="card-body">
-            <img src="assets/images/Rectangle 21922.png" class="card-img-top" alt="...">
-            <div class="clock"> <i class="fa-regular fa-clock"></i>  <span>منذ ساعة </span></div>
-            <h2 class="card-title">هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء</h2>
-            <p class="card-text">هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي  القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة  التي يقرأها.</p>
-            <div class="readMore">قراءة المزيد..</div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 col-sm-12">
-        <div class="card">
-          <div class="card-body">
-            <img src="assets/images/Rectangle 21922.png" class="card-img-top" alt="...">
-            <div class="clock"> <i class="fa-regular fa-clock"></i>  <span>منذ ساعة </span></div>
-            <h2 class="card-title">هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء</h2>
-            <p class="card-text">هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي  القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة  التي يقرأها.</p>
-            <div class="readMore">قراءة المزيد..</div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 col-sm-12">
-        <div class="card">
-          <div class="card-body">
-            <img src="assets/images/Rectangle 21922.png" class="card-img-top" alt="...">
-            <div class="clock"> <i class="fa-regular fa-clock"></i>  <span>منذ ساعة </span></div>
-            <h2 class="card-title">هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء</h2>
-            <p class="card-text">هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي  القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة  التي يقرأها.</p>
-            <div class="readMore">قراءة المزيد..</div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 col-sm-12">
-        <div class="card">
-          <div class="card-body">
-            <img src="assets/images/Rectangle 21922.png" class="card-img-top" alt="...">
-            <div class="clock"> <i class="fa-regular fa-clock"></i>  <span>منذ ساعة </span></div>
-            <h2 class="card-title">هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء</h2>
-            <p class="card-text">هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي  القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة  التي يقرأها.</p>
-            <div class="readMore">قراءة المزيد..</div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 col-sm-12">
-        <div class="card">
-          <div class="card-body">
-            <img src="assets/images/Rectangle 21922.png" class="card-img-top" alt="...">
-            <div class="clock"> <i class="fa-regular fa-clock"></i>  <span>منذ ساعة </span></div>
-            <h2 class="card-title">هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء</h2>
-            <p class="card-text">هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي  القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة  التي يقرأها.</p>
-            <div class="readMore">قراءة المزيد..</div>
-          </div>
-        </div>
-      </div>
+
+
+
+
+
 
       <!-- <button class="displyMore" type="button">عرض المزيد</button> -->
 

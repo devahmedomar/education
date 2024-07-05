@@ -57,7 +57,6 @@ import { TabViewModule } from 'primeng/tabview';
     ArticlesPageComponent,
     ArticlesPagePreviewComponent,
     UsagePolicyComponent,
-    TeamComponent,
     LicensesComponent,
     DocumentationComponent,
     JoinUsComponent,
@@ -66,6 +65,7 @@ import { TabViewModule } from 'primeng/tabview';
     CoursesComponent,
     WeAreComponent,
     JionUSasCompanyComponent,
+    TeamComponent,
   ],
   imports: [
     BrowserModule,

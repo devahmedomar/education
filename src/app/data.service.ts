@@ -19,9 +19,16 @@ export class DataService {
    {
     return this._HttpClient.get("http://51.20.43.250:8000/eduroutes/")
     }
+    getEduRoutesDetails(id:string):Observable<any>
+    {
+     return this._HttpClient.get(`http://51.20.43.250:8000/eduroutes/${id}`)
+    }
   getNewsData():Observable<any> 
   {
     return this._HttpClient.get("http://51.20.43.250:8000/news/")
+  }
+  getNewsDetials(id:string):Observable<any> {
+    return this._HttpClient.get(`http://51.20.43.250:8000/news/${id}/`)
   }
 
   getTrainerDetails(id:string):Observable<any>

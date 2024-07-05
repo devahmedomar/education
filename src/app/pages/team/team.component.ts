@@ -1,10 +1,14 @@
 import { Component } from '@angular/core';
 import { serviceLog } from './team.service';
 
+
 @Component({
   selector: 'app-team',
   templateUrl: './team.component.html',
-  styleUrls: ['./team.component.css']
+  styleUrls: ['./team.component.css'],
+
+
+
 })
 export class TeamComponent {
 
@@ -16,3 +20,6 @@ export class TeamComponent {
   }
 
 }
+
+
+

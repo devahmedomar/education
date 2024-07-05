@@ -156,8 +156,8 @@
     <div class="row py-3">
         <h4>مدربين المسار</h4>
         <div class="col-md-6 d-flex py-2">
-            <a class="text-center d-flex justify-content-center" *ngFor="let trainer of eduTrainers"  class="trianerInfo mx-2">
-               <div class="lineTrainers" [routerLink]="['/trainers', trainer.tid]">
+            <a class="text-center d-flex justify-content-center" *ngFor="let trainer of eduTrainers"  class="trianerInfo mx-2" [routerLink]="['/trainers', trainer.tid]">
+               <div class="lineTrainers" >
                     <div class="imageContainer text-center  ">
                         <img [src]="trainer.image" alt="trainer-image" class="img-fluid">
                     </div>
