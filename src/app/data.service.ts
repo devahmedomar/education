@@ -8,32 +8,36 @@ import { Observable } from 'rxjs';
 })
 export class DataService {
   constructor(public _HttpClient:HttpClient) {
-    
+
    }
-   
+  //  get():Observable<any> {
+  //   return this._HttpClient.get()
+
+  //  }
+
    getTrainersData():Observable<any>
    {
-    return this._HttpClient.get("http://51.20.43.250:8000/trainers/")
+    return this._HttpClient.get("https://ucti.com.sa/trainers/")
    }
    getEduRoutesData():Observable<any>
    {
-    return this._HttpClient.get("http://51.20.43.250:8000/eduroutes/")
+    return this._HttpClient.get("https://ucti.com.sa/eduroutes/")
     }
     getEduRoutesDetails(id:string):Observable<any>
     {
-     return this._HttpClient.get(`http://51.20.43.250:8000/eduroutes/${id}`)
+     return this._HttpClient.get(`https://ucti.com.sa/eduroutes//${id}`)
     }
-  getNewsData():Observable<any> 
+  getNewsData():Observable<any>
   {
-    return this._HttpClient.get("http://51.20.43.250:8000/news/")
+    return this._HttpClient.get("https://ucti.com.sa/news/")
   }
   getNewsDetials(id:string):Observable<any> {
-    return this._HttpClient.get(`http://51.20.43.250:8000/news/${id}/`)
+    return this._HttpClient.get(`https://ucti.com.sa/news/${id}/`)
   }
 
   getTrainerDetails(id:string):Observable<any>
   {
-    return this._HttpClient.get(`http://51.20.43.250:8000/trainers/${id}/`)
+    return this._HttpClient.get(`https://ucti.com.sa/trainers//${id}/`)
   }
 
 }

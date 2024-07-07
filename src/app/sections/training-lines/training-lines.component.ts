@@ -7,13 +7,13 @@ import { DataService } from 'src/app/data.service';
 })
 export class TrainingLinesComponent {
 
- 
+
   eduRoutes :any =[];
   constructor(public _DataService:DataService )
   {
     this._DataService.getEduRoutesData().subscribe((info)=>{
       this.eduRoutes = info.data;
-      console.log(this.eduRoutes)
+
     })
 
 

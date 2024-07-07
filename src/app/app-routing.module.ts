@@ -35,7 +35,7 @@ const routes: Routes = [
     component:JoinUsComponent
   },
   {
-    path:'trainingLines/:id',
+    path:'trainingLines',
     component:TrackComponent
   },
   {
@@ -59,10 +59,10 @@ const routes: Routes = [
     component:TrainerComponent
   },
   {
-    
+
       path:'trainers',
       component:TrainerComponent
-    
+
   },
   {
     path:'articles',

@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,4 +8,23 @@ import { Component } from '@angular/core';
 })
 export class JionUSasCompanyComponent {
 
+  formData = {
+    cName:'',
+    cEmial:'',
+    loption:'',
+    eNumber:'',
+    courseName:'',
+
+
+
+
+
+  }
+  constructor(private http:HttpClient) {}
+
+  onSubmit() {
+
+    // const baseUrl ="https://ucti.com.sa/join-us-as-company/"
+  this.http.post("https://ucti.com.sa/join-us-as-company/",this.formData)
+}
 }

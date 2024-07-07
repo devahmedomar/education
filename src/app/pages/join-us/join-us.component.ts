@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import {  AfterViewInit, ElementRef } from '@angular/core';
 import  intlTelInput from 'intl-tel-input';
@@ -8,7 +9,15 @@ import  intlTelInput from 'intl-tel-input';
   styleUrls: ['./join-us.component.css']
 })
 export class JoinUsComponent  {
-  constructor(private elementRef: ElementRef) {}
+
+  formData = {
+    name:'',
+    email:'',
+    phoneNumber:'',
+    option:''
+
+  }
+  constructor(private elementRef: ElementRef,private http:HttpClient) {}
 
   ngAfterViewInit() {
     const inputElement = this.elementRef.nativeElement.querySelector('#phone');
@@ -26,5 +35,14 @@ export class JoinUsComponent  {
       const formattedNumber = `+${dialCode} ${number}`;
       inputElement.value = formattedNumber;
     });
+  }
+
+  onSubmit() {
+    const baseUrl = "https://ucti.com.sa/join-us-as-individual/"
+    this.http.post(baseUrl,this.formData).subscribe((response)=>{
+      console.log("done");
+
+    })
+
   }
 }

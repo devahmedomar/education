@@ -34,8 +34,8 @@
 
 
        <div class="form-container">
-      <form class="contact-form">
-          <input type="email" placeholder="البريد الإلكتروني" class="email-input">
+      <form class="contact-form "  > <!--(ngSubmit)="onSubmit() [(ngModel)]="formData.email"-->
+          <input type="email" placeholder="البريد الإلكتروني" class="email-input"  required="">
           <button type="submit" class="submit-button">إرسال</button>
       </form>
   </div>

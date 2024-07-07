@@ -9,26 +9,26 @@
                 <a routerLink="/joinUs"> <h5 class="">انضم لنا كمتدرب</h5></a>
                 <a routerLink="/asCompany"><h5 class="mx-3 text-black detect"> انضم لنا كشركة </h5> </a>
             </div>
-            <form>
+            <form (ngSubmit)="onSubmit()">
                 <div class="row">
                     <div class="col-md-6 py-2 ">
                         <div class="">
                             <label class="form-label">اسم الشركة </label> <br>
-                            <input type="text" class="form-control" placeholder="اسم الشركة ">
+                            <input type="text" class="form-control" placeholder="اسم الشركة " [(ngModel)]="formData.cName"]>
                         </div>
                     </div>
                     <div class="col-md-6 py-2">
                         <div class="">
                             <label class="form-label">البريد الإلكتروني</label> <br>
-                            <input type="email" class="form-control" placeholder="بريد الشركة الإلكتروني">
-                        </div>    
+                            <input type="email" class="form-control" placeholder="بريد الشركة الإلكتروني" [(ngModel)]="formData.cEmial">
+                        </div>
                     </div>
                 </div>
                 <div class="row ">
                     <div class="col-md-6  col-sm-12">
                          <div class="   ">
                             <label class="form-label"> موقع الشركة</label> <br>
-                            <select class="form-select">
+                            <select class="form-select" [(ngModel)]="formData.loption">
                                 <option selected>موقع الشركة</option>
                                 <option>Option 1</option>
                                 <option>Option 2</option>
@@ -38,8 +38,8 @@
                     </div>
                     <div class="col-md-6 col-sm-12 mt-2">
                         <div class="">
-                            <label class form-label>عدد الموظفين المطلوب تدريبهم</label> 
-                            <input type="text" class="form-control" placeholder="00  ">
+                            <label class form-label>عدد الموظفين المطلوب تدريبهم</label>
+                            <input type="text" class="form-control" placeholder="00  " [(ngModel)]="formData.eNumber">
                         </div>
                     </div>
                 </div>
@@ -47,7 +47,7 @@
                     <div class="col-md-6  col-sm-12">
                          <div class="   ">
                             <label class="form-label"> اختر المسار التدريبي  </label> <br>
-                            <select class="form-select">
+                            <select class="form-select" [(ngModel)]="formData.courseName">
                                 <option selected>اختر المسار </option>
                                 <option>Option 1</option>
                                 <option>Option 2</option>
@@ -57,15 +57,15 @@
                     </div>
                     <div class="col-md-6 col-sm-12 mt-2">
                         <div class="">
-                            <label class form-label>الدورات التدربيبة المطلوبة <span class="color">(اختياري)</span>   </label> 
-                            <input type="text" class="form-control" placeholder="اكتب هنا  ">
+                            <label class form-label>الدورات التدربيبة المطلوبة <span class="color">(اختياري)</span>   </label>
+                            <input type="text" class="form-control" placeholder="اكتب هنا  "[(ngModel)]="formData.courseName">
                         </div>
                     </div>
                 </div>
                 <button class="btn send my-4">أرسل طلبك</button>
             </form>
-                    
-        </div>                
+
+        </div>
     </div>
 </div>
-    
+

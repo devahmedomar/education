@@ -9,33 +9,33 @@
                 <h5 class="text-black detect">انضم لنا كمتدرب</h5>
                 <a routerLink="/asCompany"><h5 class="mx-3 "> انضم لنا كشركة </h5> </a>
             </div>
-            <form>
-                
+            <form (ngSubmit)="onSubmit()">
+
                 <div class="row">
                     <div class="col-md-6 py-2 ">
                         <div class="">
                             <label class="form-label">الإٍسم بالكامل</label> <br>
-                            <input type="text" class="form-control" placeholder="اسمك بالكامل">
+                            <input type="text" class="form-control" placeholder="اسمك بالكامل" [(ngModel)]="formData.name">
                         </div>
                     </div>
                     <div class="col-md-6 py-2">
                         <div class="">
                             <label class="form-label">البريد الإلكتروني</label> <br>
-                            <input type="email" class="form-control" placeholder="بريدك الإلكتروني">
-                        </div>    
+                            <input type="email" class="form-control" placeholder="بريدك الإلكتروني" [(ngModel)]="formData.email">
+                        </div>
                     </div>
                 </div>
                 <div class="row ">
                     <div class="col-md-6  col-sm-12">
                          <div class=" phoneInput  position-relative  ">
                             <label class="form-label">رقم جوال</label> <br>
-                            <input id="phone" type="tel" class="form-control"  placeholder="" >
+                            <input id="phone" type="tel" class="form-control"  placeholder=""  [(ngModel)]="formData.phoneNumber">
                         </div>
                     </div>
-                    <div class="col-md-6 col-sm-12 mt-2">
+                    <div class="col-md-6 col-sm-12 mt-2 " >
                         <div class="">
-                            <label class form-label>اختار المسار التدريبي الذي ترغب بالانضمام له</label> 
-                            <select class="form-select">
+                            <label class form-label>اختار المسار التدريبي الذي ترغب بالانضمام له</label>
+                            <select class="form-select"  [(ngModel)]="formData.option">
                               <option selected>Choose...</option>
                               <option>Option 1</option>
                               <option>Option 2</option>
@@ -45,10 +45,10 @@
                     </div>
                 </div>
 
-                <button class="btn send my-4">أرسل طلبك</button>
+                <button class="btn send my-4" type="submit">أرسل طلبك</button>
             </form>
-                    
-        </div>                
+
+        </div>
     </div>
 </div>
-    
+
