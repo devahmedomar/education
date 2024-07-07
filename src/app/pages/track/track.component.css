@@ -3,6 +3,10 @@
     padding-left: 6%;
     padding-right: 6%;
 }
+.headingLine
+{
+    color: black !important;
+}
 .trainingLines h5
 {
     font-size: 16px;
@@ -12,25 +16,30 @@
 }
 .trainingLines .trainingLinesContainer .trainingLinesBackground
 {
-    background-image: url('/assets/images/download.jfif');
-    background-size: 100% 100% ;
-    margin: 0;
-    padding: 0;
+    position: relative;
+}
+.trainingLines .trainingLinesContainer .trainingLinesBackground img
+{
+ 
+    height:333px;
     border-radius: 8px;
+    width: 100% !important;
+    padding: 0px !important;
+    margin: 0px !important;
 }
 .trainingLines .trainingLinesContainer .trainingLinesBackground .trainingLinesOpacity
 {
-    background-color: #1F1F1F    ;
+    position: absolute;
     opacity: 70%;
-    width: 100%;
+    width: 98% !important;
     height: 100%;
     border-radius: 8px;
+    background-color: #1f1f1f;
 }
 .trackIntro
 {
     color: #F8F9F9;
     border-radius: 8px;
-    padding: 10px;
 }   
 .trackIntro h3
 {
@@ -79,6 +88,12 @@
 .coursesOut .coursesImage
 {
     background-color: black;
+    width: 64px;
+    height: 64px;
+    border-radius: 8px;
+}
+.coursesOut .coursesImage img
+{
     width: 64px;
     height: 64px;
     border-radius: 8px;

@@ -3,15 +3,15 @@
     <div class="row rowSpacing  bg-white">
         <div class="heading d-flex  mb-4">
             <h5>المسارات التعلمية /  </h5>
-            <h5 class="headingLine mx-2"> مسار السياحة /</h5>
+            <h5 class="headingLine mx-2"> مسار {{trainersData.role}} /</h5>
             <h5 class="mx-2"> {{trainersData.name}} </h5>
         </div>
         <div class="col-md-3    pb-3">
             <div class="trainerProfile p-5  d-flex justify-content-center">
                 <div class="trianerInfo text-center mx-2">
-                    <img [src]="trainerImg" class="img-fluid" alt="">
+                    <img [src]="trainersData.image" class="img-fluid" alt="">
                     <h5 class="pt-2">{{trainersData.name}}</h5>
-                    <p>12 سنة خبرة</p>
+                    <p>{{trainersData.description}}</p>
                 </div>
             </div>
         </div>
@@ -36,7 +36,7 @@
     <div id="section2" *ngIf="currentSection === 'section2'" class="certificates py-3 px-4">
         <ul>
             <li  class="py-2">
-                <a [attr.href]="trainerCv" >CV</a> 
+                <a [attr.href]="trainersData.cv" >CV</a> 
             </li>
         </ul>
     </div>
@@ -60,7 +60,7 @@
         </div>
     </div>
     <div id="section5" *ngIf="currentSection === 'section5'" class="row pt-3 px-2">
-        <div class="col-md-6  trainerContainer px-3 py-3">
+        <div *ngFor="let item of trainersData.items" class="col-md-6  trainerContainer px-3 py-3">
             <div class="row    pt-2">
                 <div class="col-md-1 ">
                     <div class="coursesImage">
@@ -69,62 +69,19 @@
                 </div>
                 <div class="col-md-5   offset-md-1    ">
                     <div class="courseData px-2">
-                        <h5>اسم الدورة</h5>
+                        <h5>{{item.title}} </h5>
                         <div class="d-flex courseTime">
-                            <p>14 يوم . </p>
-                            <p>12 ساعة</p>
+                            <p> يوم . </p>
+                            <p>{{item.hours}} ساعة</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-5 showDetails  ">
-                    <a routerLink="/trainer">عرض التفاصيل</a>
+                    <a [routerLink]="['/courses',item.iid]">عرض التفاصيل</a>
                 </div>
             </div>
         </div>
-
-
-
-        <div class="col-md-6  trainerContainer px-3 py-3">
-            <div class="row    pt-2">
-                <div class="col-md-1 ">
-                    <div class="coursesImage">
-                    </div>
-                </div>
-                <div class="col-md-5   offset-md-1    ">
-                    <div class="courseData px-2">
-                        <h5>اسم الدورة</h5>
-                        <div class="d-flex courseTime">
-                            <p>14 يوم . </p>
-                            <p>12 ساعة</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-5 showDetails  ">
-                    <a routerLink="/trainer">عرض التفاصيل</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6  trainerContainer px-3 py-1">
-            <div class="row    pt-2">
-                <div class="col-md-1 ">
-                    <div class="coursesImage">
-                        
-                    </div>
-                </div>
-                <div class="col-md-5   offset-md-1    ">
-                    <div class="courseData px-2">
-                        <h5>اسم الدورة</h5>
-                        <div class="d-flex courseTime">
-                            <p>14 يوم . </p>
-                            <p>12 ساعة</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-5 showDetails  ">
-                    <a routerLink="/trainer">عرض التفاصيل</a>
-                </div>
-            </div>
-        </div>
+     
     </div>        
             
         </div>

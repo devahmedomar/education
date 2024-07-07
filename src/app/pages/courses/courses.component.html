@@ -3,22 +3,22 @@
     <div class="row rowSpacing  bg-white">
         <div class="heading d-flex  mb-4">
             <h5>المسارات التعليمية /  </h5>
-            <h5 class="headingLine mx-2"> مسار السياحة /</h5>
-            <h5 class="mx-2"> اسم الدورة </h5>
+            <h5 class="headingLine mx-2"> مسار {{CourseData.title}} /</h5>
+            <h5 class="mx-2 " >{{CourseData.title}} </h5>
         </div>
         <div class="col-md-3    d-flex p-2">
             <div class="trainerProfile p-3 pb-4  ">
                 <div class="imagContainer">
-                    <img src="assets/images/courseImage.jfif" class="img-fluid" alt="">
+                    <img [src]="CourseData.image" class="img-fluid" alt="">
                     <div class="state">
                         <p>حضورية</p>
                     </div>
                 </div>
                 <div class="courseData py-2">
-                    <h5>اسم الدورة</h5>
+                    <h5>{{CourseData.title}}</h5>
                     <div class="d-flex courseTime">
-                        <p>14 يوم . </p>
-                        <p>12 ساعة</p>
+                        <p> {{daysNum}} يوم . </p>
+                        <p> {{CourseData.hours}} ساعة </p>
                     </div>
                 </div>
                 <a href="" class=""> تواصل معنا للإستفسار <i class="fa-brands fa-whatsapp px-1"></i></a>
@@ -35,38 +35,16 @@
                 </ul>    
             </div>
             <div class="paragContainer" id="section1" *ngIf="currentSection === 'section1'">
-                <p>هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي  القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة  التي يقرأها هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي  القارئ.</p>
+                <p>{{CourseData.description}}</p>
             </div>
             <div class="paragContainer" id="section2" *ngIf="currentSection === 'section2'" >
                 <div class="paragContainer pt-3 d-flex">
-                    <div class="goals d-flex w-25 ">
+                    <div class="goals d-flex w-25 " *ngFor="let item of CourseData.goals">
                         <i class="fa-solid fa-circle-check pt-2 "></i>
-                        <p class="px-2">قادر على مواكبة سوق العمل</p>    
-                    </div>
-                    <div class="goals d-flex w-25 ">
-                        <i class="fa-solid fa-circle-check pt-2 "></i>
-                        <p class="px-2">قادر على مواكبة سوق العمل</p>    
-                    </div>
-                    <div class="goals d-flex w-25 ">
-                        <i class="fa-solid fa-circle-check pt-2 "></i>
-                        <p class="px-2">قادر على مواكبة سوق العمل</p>    
-                    </div>
-                    <div class="goals d-flex w-25 ">
-                        <i class="fa-solid fa-circle-check pt-2 "></i>
-                        <p class="px-2">قادر على مواكبة سوق العمل</p>    
-                    </div>
-                    
+                        <p class="px-2">{{item}}</p>    
+                    </div>   
                 </div>
-                <div class="paragContainer d-flex ">
-                    <div class="goals d-flex w-25 ">
-                        <i class="fa-solid fa-circle-check pt-2 "></i>
-                        <p class="px-2">قادر على مواكبة سوق العمل</p>    
-                    </div>
-                    <div class="goals d-flex w-25 ">
-                        <i class="fa-solid fa-circle-check pt-2 "></i>
-                        <p class="px-2">قادر على مواكبة سوق العمل</p>    
-                    </div>
-                </div>
+             
             </div>
             <div class="paragContainer" id="section3" *ngIf="currentSection === 'section3'">
                 <p>هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي  القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة  التي يقرأها هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي  القارئ.</p>
@@ -81,10 +59,10 @@
                         </div>
                         <div class="TimeData mx-2">
                             <div class="courseData px-2">
-                                <h5>2 فبراير  - 9 فبراير 2024 </h5>
+                                <h5>{{CourseData.st_day}} _ {{CourseData.end_day}} </h5>
                                 <div class="d-flex courseTime">
-                                    <p> 06:00 مساءً -  </p>
-                                    <p class="px-1">03:00 مساءً</p>
+                                    <p> {{extractedTime}} {{timeOfDay}}  </p>
+                                    <p class="px-1"></p>
                                 </div>
                             </div>
                         </div>
@@ -97,16 +75,23 @@
                         </div>
                         <div class="TimeData ">
                             <div class="courseData px-2">
-                                <h5>2 فبراير  - 9 فبراير 2024 </h5>
+                                <h5>{{CourseData.location}} </h5>
                                 <div class="d-flex courseTime">
-                                    <p> 06:00 مساءً -  </p>
-                                    <p class="px-1">03:00 مساءً</p>
+                                    <p>   </p>
+                                    <p class="px-1"></p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-8 googleMaps">
-                        <img src="/assets/images/Mapsicle Map.svg" class="img-fluid" alt="googleMaps">
+                        <iframe
+                            width="600"
+                            height="450"
+                            frameborder="0"
+                            style="border:0"
+                            [src]="mapUrl"
+                            allowfullscreen>
+                        </iframe>
                     </div>
                 </div>
             </div>

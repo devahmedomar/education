@@ -1,19 +1,22 @@
 import { ViewportScroller } from '@angular/common';
-import { Component ,HostListener,ElementRef } from '@angular/core';
+import { Component ,HostListener,ElementRef,OnInit, AfterViewInit, AfterViewChecked ,ViewChild } from '@angular/core';
 import { RouterLinkActive } from '@angular/router';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit,AfterViewChecked {
   isScrolled: boolean = false;
-  constructor(private viewportScroller: ViewportScroller) {}
+  isExpanded: boolean | undefined;
+  constructor() {}
+ 
 
-  scrollToSection(sectionId: string): void {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+
+  scrollToSection(sectionId: string) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
 
@@ -21,11 +24,27 @@ export class NavbarComponent {
     const element = document.getElementById(sectionId);
     if (element) {
       const rect = element.getBoundingClientRect();
-      return rect.top <= 64 && rect.bottom >= 64; // Adjust the offset as needed
+      return rect.top <=63 && rect.bottom >= 100; // Adjust the offset as needed
     }
     return false;
   }
+  
 
+
+
+  ngOnInit(): void {
+    // Simulating async data fetching
+    setTimeout(() => {
+      this.isExpanded = true; // Updating property asynchronously
+    }, 1000);
+  }
+
+  ngAfterViewChecked(): void {
+    // Check if the value has changed and then update
+    if (this.isExpanded !== true) {
+      this.isExpanded = true;
+    }
+  }
   
 
 

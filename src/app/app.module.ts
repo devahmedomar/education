@@ -35,7 +35,7 @@ import { JionUSasCompanyComponent } from './pages/jion-usas-company/jion-usas-co
 import { serviceLog } from './pages/team/team.service';
 import {  HttpClientModule} from "@angular/common/http"
 import { CommonModule } from '@angular/common';
-import { TabViewModule } from 'primeng/tabview';
+import { GoogleMapsModule } from '@angular/google-maps';
 
 @NgModule({
   declarations: [
@@ -75,7 +75,8 @@ import { TabViewModule } from 'primeng/tabview';
     FormsModule,
     HttpClientModule,
     CommonModule,
-    TabViewModule
+    GoogleMapsModule
+    
   ],
   // providers: [serviceLog],
   bootstrap: [AppComponent]

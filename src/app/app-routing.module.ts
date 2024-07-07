@@ -39,11 +39,15 @@ const routes: Routes = [
     component:TrackComponent
   },
   {
+    path:'trainingLines',
+    component:TrackComponent
+  },
+  {
     path:'trainer',
     component:TrainerComponent
   },
   {
-    path:'courses',
+    path:'courses/:id',
     component:CoursesComponent
   },
   {
@@ -62,7 +66,6 @@ const routes: Routes = [
     
       path:'trainers',
       component:TrainerComponent
-    
   },
   {
     path:'articles',

@@ -11,8 +11,6 @@ export class TrainerComponent {
   currentSection: string = 'section1'; // Default section
   currentTab: string = 'section1'; // Default tab
   trainersData :any = [];
-  trainerCv :string='' ;
-  trainerImg :string='' ;
   id:string = '';
 
   constructor (public _ActivatedRoute:ActivatedRoute, public _DataService:DataService){
@@ -21,8 +19,7 @@ export class TrainerComponent {
 
     this._DataService.getTrainerDetails(this.id).subscribe((info)=>{
       this.trainersData = info.data; 
-      this.trainerCv = this.trainersData.cv;
-      this.trainerImg = this.trainersData.image;
+      console.log(this.trainersData)
     })
 
    
