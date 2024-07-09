@@ -8,6 +8,7 @@ import { DataService } from 'src/app/data.service';
 })
 export class ArticlesPageComponent {
   NewsData:any =[] ;
+  term :string = '';
   constructor(public data:DataService) {
    data.getNewsData().subscribe((value)=>{
     this.NewsData = value.data;
