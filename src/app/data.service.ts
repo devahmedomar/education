@@ -10,10 +10,7 @@ export class DataService {
   constructor(public _HttpClient:HttpClient) {
 
    }
-  //  get():Observable<any> {
-  //   return this._HttpClient.get()
 
-  //  }
 
    getTrainersData():Observable<any>
    {
@@ -25,7 +22,9 @@ export class DataService {
     }
     getEduRoutesDetails(id:string):Observable<any>
     {
+
      return this._HttpClient.get(`https://ucti.com.sa/eduroutes//${id}`)
+
     }
   getNewsData():Observable<any>
   {
@@ -34,10 +33,24 @@ export class DataService {
   getNewsDetials(id:string):Observable<any> {
     return this._HttpClient.get(`https://ucti.com.sa/news/${id}/`)
   }
+  getTeamData():Observable<any> {
+    return this._HttpClient.get(`https://ucti.com.sa/team-manager/`)
+  }
 
   getTrainerDetails(id:string):Observable<any>
   {
-    return this._HttpClient.get(`https://ucti.com.sa/trainers//${id}/`)
+
+    return this._HttpClient.get(`https://ucti.com.sa/trainers/${id}/`)
   }
+  getCourseDetails(id:string):Observable<any>
+  {
+    return this._HttpClient.get(`https://ucti.com.sa/course/${id}/`)
+
+  }
+  // postFormINData():Observable<any>
+  // {
+  //   return this._HttpClient.post(`https://ucti.com.sa/join-us-as-individual/`)
+
+  // }
 
 }

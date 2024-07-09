@@ -35,7 +35,7 @@ const routes: Routes = [
     component:JoinUsComponent
   },
   {
-    path:'trainingLines',
+    path:'trainingLines/:id',
     component:TrackComponent
   },
   {
@@ -43,7 +43,7 @@ const routes: Routes = [
     component:TrainerComponent
   },
   {
-    path:'courses',
+    path:'courses/:id',
     component:CoursesComponent
   },
   {

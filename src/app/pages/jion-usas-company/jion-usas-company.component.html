@@ -7,20 +7,21 @@
             </div>
             <div class="d-flex py-4 ">
                 <a routerLink="/joinUs"> <h5 class="">انضم لنا كمتدرب</h5></a>
-                <a routerLink="/asCompany"><h5 class="mx-3 text-black detect"> انضم لنا كشركة </h5> </a>
+                <a ><h5 class="mx-3 text-black detect"> انضم لنا كشركة </h5> </a>
             </div>
+            <!--    -->
             <form (ngSubmit)="onSubmit()">
                 <div class="row">
                     <div class="col-md-6 py-2 ">
                         <div class="">
                             <label class="form-label">اسم الشركة </label> <br>
-                            <input type="text" class="form-control" placeholder="اسم الشركة " [(ngModel)]="formData.cName"]>
+                            <input type="text" class="form-control" placeholder="اسم الشركة "name="cName" [(ngModel)]="formData.cName">
                         </div>
                     </div>
                     <div class="col-md-6 py-2">
                         <div class="">
                             <label class="form-label">البريد الإلكتروني</label> <br>
-                            <input type="email" class="form-control" placeholder="بريد الشركة الإلكتروني" [(ngModel)]="formData.cEmial">
+                            <input type="email" class="form-control" placeholder="بريد الشركة الإلكتروني" [(ngModel)]="formData.cEmial" name="cEmial">
                         </div>
                     </div>
                 </div>
@@ -39,7 +40,7 @@
                     <div class="col-md-6 col-sm-12 mt-2">
                         <div class="">
                             <label class form-label>عدد الموظفين المطلوب تدريبهم</label>
-                            <input type="text" class="form-control" placeholder="00  " [(ngModel)]="formData.eNumber">
+                            <input type="text" class="form-control" placeholder="00  " [(ngModel)]="formData.eNumber" name="eNumber">
                         </div>
                     </div>
                 </div>
@@ -58,7 +59,7 @@
                     <div class="col-md-6 col-sm-12 mt-2">
                         <div class="">
                             <label class form-label>الدورات التدربيبة المطلوبة <span class="color">(اختياري)</span>   </label>
-                            <input type="text" class="form-control" placeholder="اكتب هنا  "[(ngModel)]="formData.courseName">
+                            <input type="text" class="form-control" placeholder="اكتب هنا  "[(ngModel)]="formData.courseName" name="courseName">
                         </div>
                     </div>
                 </div>

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { serviceLog } from './team.service';
+import { DataService } from 'src/app/data.service';
 
 
 @Component({
@@ -11,13 +12,15 @@ import { serviceLog } from './team.service';
 
 })
 export class TeamComponent {
+teamData:any=[]
+  constructor(private _dataService:DataService) {
+    _dataService.getTeamData().subscribe((value)=>{
+      this.teamData = value.data
 
-  constructor(private logservice:serviceLog) {
+    })
 
   }
-  mylog() {
-   this.logservice.log()
-  }
+
 
 }
 

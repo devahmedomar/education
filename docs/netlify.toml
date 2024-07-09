@@ -8,5 +8,3 @@ from = "/*"
 to = "index.html"
 status = 200
 
-[context.production.environment]
-  API_URL = " http://51.20.43.250:8000/users/swagger/schema/"

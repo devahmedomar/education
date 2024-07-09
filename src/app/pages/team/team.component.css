@@ -30,3 +30,8 @@
   font-size: 18px;
   font-weight: 500;
 }
+.image {
+  width: 300px;
+  height: 240px;
+  border-radius: 10px;
+}

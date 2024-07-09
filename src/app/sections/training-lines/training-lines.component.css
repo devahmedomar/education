@@ -159,6 +159,7 @@
 
 .rightCircle .line1 .lineContent
 {
+    height: 262px ;
     position: relative;
     padding-bottom: 10px; ;
     padding-top: 10px;
@@ -177,6 +178,8 @@
 
 .leftCircle .line1 .lineContent
 {
+    height: 262px ;
+    direction: rtl;
     position: relative;
     padding-bottom: 10px; ;
     padding-top: 10px;
@@ -211,7 +214,7 @@
     height: 29%;
     border-top: 132px solid white;
     border-bottom: 132px solid white;
-    border-left:132px solid #D09F0C
+    border-left:132px solid #AC7FB9
     ;
     top: -4px;
     right: -60px;
@@ -242,15 +245,13 @@
     height: 29%;
     border-top: 125px solid transparent;
     border-bottom: 126px solid transparent;
-    border-left:125px solid  white ;
+    border-left:126px solid  white ;
     top: 2px;
-    right: -55px;
+    right: -54px;
     z-index: 99999;
 }
 .rightCircle .line1 .imageContainer
 {
-    background-image: url('/assets/images/download.jfif');
-    background-size:100% 100%;
     border-radius: 451px;
     width: 302.66px;
     height: 302.66px;
@@ -260,12 +261,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
+.rightCircle .line1 .imageContainer img
+{
+    width:100%;
+    height:100%;
+    border-radius: 451.73px;
+}
+
 .leftCircle .line1 .imageContainer
 {
-    background-image: url('/assets/images/download.jfif');
-    background-size:100% 100%;
     border-radius: 451px;
     width: 302.66px;
     height: 302.66px;
@@ -275,47 +280,57 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: red;
+}
+.leftCircle .line1 .imageContainer img
+{
+    width:100%;
+    height:100%;
+    border-radius: 451.73px;
 }
 .rightCircle .line1 .imageContainer .textContainer
 {
+    
     width: 158.11px;
     height: 158.11px;
-    background-color: white;
-    opacity: 25%;
     border-radius: 451.7px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: absolute;
+    z-index: 9999999;
+    background-color: white;
+    opacity: 40%;
 }
-.leftCircle .line1 .imageContainer .textContainer
+.rightCircle .line1 .imageContainer .textContainer h1
 {
-    width: 158.11px;
-    height: 158.11px;
-    background-color: white;
-    opacity: 25%;
-    border-radius: 451.7px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    color: black    ;
+    font-size: 81.31px;
+    font-weight: 600;
+    line-height: 99.38px;
+    position: relative;
+    z-index: 99999;
 }
 
-.rightCircle .line1 .imageContainer .textContainer h2
+.leftCircle  .textContainer
 {
-    color: black    ;
-    font-size: 81.31px;
-    font-weight: 600;
-    line-height: 99.38px;
-    position: relative;
-    z-index: 99999;
+    width: 158.11px;
+    height: 158.11px;
+    background-color: white;
+    position: absolute;
+    opacity: 40%;
+    border-radius: 451.7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999999;
 }
-.leftCircle .line1 .imageContainer .textContainer h2
+
+.leftCircle  .textContainer .th1
 {
-    color: black    ;
-    font-size: 81.31px;
-    font-weight: 600;
-    line-height: 99.38px;
-    position: relative;
-    z-index: 99999;
+    color: black    !important;
+    font-size: 81.31px !important;
+    font-weight: 600 !important;
+    line-height: 99.38px !important;
+    position: relative !important;
+    z-index: 99999 ;
 }
 
 .rightCircle .line1 .lineContent h1

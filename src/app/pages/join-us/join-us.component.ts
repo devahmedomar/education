@@ -37,9 +37,16 @@ export class JoinUsComponent  {
     });
   }
 
-  onSubmit() {
-    const baseUrl = "https://ucti.com.sa/join-us-as-individual/"
-    this.http.post(baseUrl,this.formData).subscribe((response)=>{
+  onSubmit(data:{
+    name:string,
+    email:string,
+    phone:string,
+    option:string
+  }) {
+    console.log(data);
+
+
+    this.http.post("https://ucti.com.sa/join-us-as-individual/",data).subscribe((response)=>{
       console.log("done");
 
     })

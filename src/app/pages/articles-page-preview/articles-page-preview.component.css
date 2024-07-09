@@ -6,7 +6,7 @@
  font-weight: 500;
 }
 .path p {
-  color: #000000;
+  color: #535355;
   font-weight: 500;
 }
 .card-text{
@@ -42,4 +42,10 @@
   height: 200px;
   border-radius: 10px;
   width: 100%;
+}
+.more-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #535355;
+  margin-top: 100px;
 }
