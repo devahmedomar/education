@@ -12,7 +12,7 @@ export class ArticlesPageComponent {
    data.getNewsData().subscribe((value)=>{
     this.NewsData = value.data;
     console.log(this.NewsData);
-
+    
 
    })
 

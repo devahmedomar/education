@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { ReactiveFormsModule } from '@angular/forms'; // Import ReactiveFormsModule
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -36,6 +36,7 @@ import { serviceLog } from './pages/team/team.service';
 import {  HttpClientModule} from "@angular/common/http"
 import { CommonModule } from '@angular/common';
 import { GoogleMapsModule } from '@angular/google-maps';
+import { SeemorePipe } from './seemore.pipe';
 
 @NgModule({
   declarations: [
@@ -66,6 +67,7 @@ import { GoogleMapsModule } from '@angular/google-maps';
     WeAreComponent,
     JionUSasCompanyComponent,
     TeamComponent,
+    SeemorePipe,
   ],
   imports: [
     BrowserModule,
@@ -75,7 +77,8 @@ import { GoogleMapsModule } from '@angular/google-maps';
     FormsModule,
     HttpClientModule,
     CommonModule,
-    GoogleMapsModule
+    GoogleMapsModule,
+    ReactiveFormsModule
     
   ],
   // providers: [serviceLog],

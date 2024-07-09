@@ -8,192 +8,25 @@
 
   </div>
   <div class="container  position-relative">
-     <div class="row opacity-row gy-3 row-cols-xl-5 row-cols-lg-4 row-cols-md-3 row-cols-sm-2">
-      <div class="col">
-        <div class="profile">
+     <div class="row opacity-row gy-3 row-cols-xl-5 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 mb-5">
+      <div class="col my-5" *ngFor="let trainer of trainers">
+        <div class="profile" [routerLink]="['/trainers', trainer.tid]">
           <div class="image-holder">
-            <img src="assets/images/unsplash_sibVwORYqs0.jpg" alt=" ">
+            <img [src]="trainer.image" alt=" ">
           </div>
-          <h3>عبدالحمن غريب السيد</h3>
+          <h3>{{trainer.name}}</h3>
           <div class="course-name">
             <img src="assets/images/vuesax/bold/designtools.png" alt="">
-            <span>مسار السياحة</span>
+            <span>مسار {{trainer.role}}</span>
           </div>
         </div>
       </div>
-      <div class="col">
-        <div class="profile">
-          <div class="image-holder">
-            <img src="../../../assets/images/unsplash_sibVwORYqs0.jpg" alt=" ">
-          </div>
-          <h3>عبدالحمن غريب السيد</h3>
-          <div class="course-name">
-            <img src="assets/images/vuesax/bold/designtools.png" alt="">
-            <span>مسار السياحة</span>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="profile">
-          <div class="image-holder">
-            <img src="assets/images/unsplash_sibVwORYqs0.jpg" alt=" ">
-          </div>
-          <h3>عبدالحمن غريب السيد</h3>
-          <div class="course-name">
-            <img src="assets/images/vuesax/bold/designtools.png" alt="">
-            <span>مسار السياحة</span>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="profile">
-          <div class="image-holder">
-            <img src="assets/images/unsplash_sibVwORYqs0.jpg" alt=" ">
-          </div>
-          <h3>عبدالحمن غريب السيد</h3>
-          <div class="course-name">
-            <img src="assets/images/vuesax/bold/designtools.png" alt="">
-            <span>مسار السياحة</span>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="profile">
-          <div class="image-holder">
-            <img src="assets/images/unsplash_sibVwORYqs0.jpg" alt=" ">
-          </div>
-          <h3>عبدالحمن غريب السيد</h3>
-          <div class="course-name">
-            <img src="assets/images/vuesax/bold/designtools.png" alt="">
-            <span>مسار السياحة</span>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="profile">
-          <div class="image-holder">
-            <img src="assets/images/unsplash_sibVwORYqs0.jpg" alt=" ">
-          </div>
-          <h3>عبدالحمن غريب السيد</h3>
-          <div class="course-name">
-            <img src="assets/images/vuesax/bold/designtools.png" alt="">
-            <span>مسار السياحة</span>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="profile">
-          <div class="image-holder">
-            <img src="assets/images/unsplash_sibVwORYqs0.jpg" alt=" ">
-          </div>
-          <h3>عبدالحمن غريب السيد</h3>
-          <div class="course-name">
-            <img src="assets/images/vuesax/bold/designtools.png" alt="">
-            <span>مسار السياحة</span>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="profile">
-          <div class="image-holder">
-            <img src="assets/images/unsplash_sibVwORYqs0.jpg" alt=" ">
-          </div>
-          <h3>عبدالحمن غريب السيد</h3>
-          <div class="course-name">
-            <img src="assets/images/vuesax/bold/designtools.png" alt="">
-            <span>مسار السياحة</span>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="profile">
-          <div class="image-holder">
-            <img src="assets/images/unsplash_sibVwORYqs0.jpg" alt=" ">
-          </div>
-          <h3>عبدالحمن غريب السيد</h3>
-          <div class="course-name">
-            <img src="assets/images/vuesax/bold/designtools.png" alt="">
-            <span>مسار السياحة</span>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="profile">
-          <div class="image-holder">
-            <img src="assets/images/unsplash_sibVwORYqs0.jpg" alt=" ">
-          </div>
-          <h3>عبدالحمن غريب السيد</h3>
-          <div class="course-name">
-            <img src="assets/images/vuesax/bold/designtools.png" alt="">
-            <span>مسار السياحة</span>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="profile">
-          <div class="image-holder">
-            <img src="assets/images/unsplash_sibVwORYqs0.jpg" alt=" ">
-          </div>
-          <h3>عبدالحمن غريب السيد</h3>
-          <div class="course-name">
-            <img src="assets/images/vuesax/bold/designtools.png" alt="">
-            <span>مسار السياحة</span>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="profile">
-          <div class="image-holder">
-            <img src="assets/images/unsplash_sibVwORYqs0.jpg" alt=" ">
-          </div>
-          <h3>عبدالحمن غريب السيد</h3>
-          <div class="course-name">
-            <img src="assets/images/vuesax/bold/designtools.png" alt="">
-            <span>مسار السياحة</span>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="profile">
-          <div class="image-holder">
-            <img src="assets/images/unsplash_sibVwORYqs0.jpg" alt=" ">
-          </div>
-          <h3>عبدالحمن غريب السيد</h3>
-          <div class="course-name">
-            <img src="assets/images/vuesax/bold/designtools.png" alt="">
-            <span>مسار السياحة</span>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="profile">
-          <div class="image-holder">
-            <img src="assets/images/unsplash_sibVwORYqs0.jpg" alt=" ">
-          </div>
-          <h3>عبدالحمن غريب السيد</h3>
-          <div class="course-name">
-            <img src="assets/images/vuesax/bold/designtools.png" alt="">
-            <span>مسار السياحة</span>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="profile">
-          <div class="image-holder">
-            <img src="assets/images/unsplash_sibVwORYqs0.jpg" alt=" ">
-          </div>
-          <h3>عبدالحمن غريب السيد</h3>
-          <div class="course-name">
-            <img src="assets/images/vuesax/bold/designtools.png" alt="">
-            <span>مسار السياحة</span>
-          </div>
-        </div>
-      </div>
+     
 
 
     </div>
 
-    <div class="opacity">
+    <div class="opacity ">
       <h3>عرض أكثر من 200 مدرب من الكفاءات العالية وخبرات متراكمة لدينا في المعهد</h3>
 
       <button type="button"> عرض جميع المدربين</button>

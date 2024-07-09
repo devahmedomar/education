@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./we-are.component.css']
 })
 export class WeAreComponent {
-
+  constructor(){  
+    
+ 
+  };
 }
