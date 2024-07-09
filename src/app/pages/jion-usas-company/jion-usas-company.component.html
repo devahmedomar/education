@@ -9,38 +9,62 @@
                 <a routerLink="/joinUs"> <h5 class="">انضم لنا كمتدرب</h5></a>
                 <a ><h5 class="mx-3 text-black detect"> انضم لنا كشركة </h5> </a>
             </div>
-            <!--    -->
-            <form (ngSubmit)="onSubmit()">
+
+
+
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmit(myForm.value)" #myForm="ngForm">
+
                 <div class="row">
                     <div class="col-md-6 py-2 ">
                         <div class="">
                             <label class="form-label">اسم الشركة </label> <br>
-                            <input type="text" class="form-control" placeholder="اسم الشركة "name="cName" [(ngModel)]="formData.cName">
+
+
+
+                            <input ngModel type="text" class="form-control" placeholder="اسم الشركة " formControlName="companyName">
+                            <div *ngIf="registerForm.get('companyName')?.errors != null && registerForm.get('companyName')?.touched " class="border borer-danger  m-2 w-75">
+                                <small class="text-danger">من فضلك ادخل الاسم</small>
+                            </div>
+
                         </div>
                     </div>
                     <div class="col-md-6 py-2">
                         <div class="">
                             <label class="form-label">البريد الإلكتروني</label> <br>
-                            <input type="email" class="form-control" placeholder="بريد الشركة الإلكتروني" [(ngModel)]="formData.cEmial" name="cEmial">
+
+                            <input ngModel  name="cEmial" type="email" class="form-control" placeholder="بريد الشركة الإلكتروني" formControlName="companyEmail">
+                            <div *ngIf="registerForm.get('companyEmail')?.errors != null && registerForm.get('companyEmail')?.touched " class="border borer-danger  m-2 w-75">
+                                <small class="text-danger">من فضلك أدخل البريد الإلكتروني الصحيح</small>
+                            </div>
                         </div>
+
                     </div>
                 </div>
                 <div class="row ">
                     <div class="col-md-6  col-sm-12">
                          <div class="   ">
                             <label class="form-label"> موقع الشركة</label> <br>
-                            <select class="form-select" [(ngModel)]="formData.loption">
+                            <select ngModel class="form-select" formControlName="companyLocationSelect">
+
                                 <option selected>موقع الشركة</option>
                                 <option>Option 1</option>
                                 <option>Option 2</option>
                                 <option>Option 3</option>
                               </select>
+                              <div *ngIf="registerForm.get('companyLocationSelect')?.errors != null && registerForm.get('companyLocationSelect')?.touched " class="border borer-danger  m-2 w-75">
+                                <small class="text-danger">من فضلك أختر موقعا</small>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-6 col-sm-12 mt-2">
                         <div class="">
+
+
                             <label class form-label>عدد الموظفين المطلوب تدريبهم</label>
-                            <input type="text" class="form-control" placeholder="00  " [(ngModel)]="formData.eNumber" name="eNumber">
+                            <input ngModel type="number" class="form-control" placeholder="00  "  formControlName="companyEmployee">
+                            <div *ngIf="registerForm.get('companyEmployee')?.errors != null && registerForm.get('companyEmployee')?.touched " class="border borer-danger  m-2 w-75">
+                                <small class="text-danger">من فضلك ادخل عدد الموظفين</small>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -48,18 +72,20 @@
                     <div class="col-md-6  col-sm-12">
                          <div class="   ">
                             <label class="form-label"> اختر المسار التدريبي  </label> <br>
-                            <select class="form-select" [(ngModel)]="formData.courseName">
-                                <option selected>اختر المسار </option>
-                                <option>Option 1</option>
+                            <select ngModel class="form-select" formControlName="companyRouteSelect" >
+                                <option >Option 1</option>
                                 <option>Option 2</option>
                                 <option>Option 3</option>
                               </select>
+                              <div *ngIf="registerForm.get('companyRouteSelect')?.errors != null && registerForm.get('companyRouteSelect')?.touched " class="border borer-danger  m-2 w-75">
+                                <small class="text-danger">من فضلك اختر المسار التدريبي</small>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-6 col-sm-12 mt-2">
                         <div class="">
                             <label class form-label>الدورات التدربيبة المطلوبة <span class="color">(اختياري)</span>   </label>
-                            <input type="text" class="form-control" placeholder="اكتب هنا  "[(ngModel)]="formData.courseName" name="courseName">
+                            <input ngModel type="text" class="form-control" placeholder="اكتب هنا " name="courseName">
                         </div>
                     </div>
                 </div>

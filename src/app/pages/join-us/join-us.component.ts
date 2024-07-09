@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import {  AfterViewInit, ElementRef } from '@angular/core';
+import {AbstractControl, FormControl , FormGroup ,ValidatorFn, Validators} from '@angular/forms'
 import  intlTelInput from 'intl-tel-input';
 
 @Component({
@@ -10,14 +11,17 @@ import  intlTelInput from 'intl-tel-input';
 })
 export class JoinUsComponent  {
 
-  formData = {
-    name:'',
-    email:'',
-    phoneNumber:'',
-    option:''
 
+  registerForm : FormGroup ;
+  constructor(private elementRef: ElementRef,private http:HttpClient) {
+    this.registerForm = new FormGroup({
+      individualName : new FormControl('', [Validators.required , Validators.minLength(2) , Validators.maxLength(20)]),
+      individualEmail : new FormControl('',  [Validators.required , Validators.email]),
+      individualPhoneNumber : new FormControl ('',[Validators.required ,Validators.pattern(/^(?:(?:\+|00)966)?\s*0?5\d{8}$|^(?:(?:\+|00)20)?\s*1[0-2]\d{8}$/)]),
+      individualSelect : new FormControl('' , Validators.required),
+    })
   }
-  constructor(private elementRef: ElementRef,private http:HttpClient) {}
+
 
   ngAfterViewInit() {
     const inputElement = this.elementRef.nativeElement.querySelector('#phone');
@@ -38,16 +42,16 @@ export class JoinUsComponent  {
   }
 
   onSubmit(data:{
-    name:string,
-    email:string,
-    phone:string,
-    option:string
+    individualName:string,
+    individualEmail:string,
+    individualPhoneNumber:string,
+    individualSelect:string
   }) {
     console.log(data);
 
 
-    this.http.post("https://ucti.com.sa/join-us-as-individual/",data).subscribe((response)=>{
-      console.log("done");
+    this.http.post("https://ucti.com.sa/join-us-as-individual/data.json",data).subscribe((response)=>{
+
 
     })
 

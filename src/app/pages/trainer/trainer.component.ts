@@ -12,6 +12,9 @@ export class TrainerComponent {
   currentTab: string = 'section1'; // Default tab
   trainersData :any = [];
   id:string = '';
+  daysNum :Number | undefined ;
+  st_day:string='';
+  end_day:string='';
 
   constructor (public _ActivatedRoute:ActivatedRoute, public _DataService:DataService){
     this.id=this._ActivatedRoute.snapshot.params['id'];
@@ -19,7 +22,19 @@ export class TrainerComponent {
 
     this._DataService.getTrainerDetails(this.id).subscribe((info)=>{
       this.trainersData = info.data; 
-      console.log(this.trainersData)
+      for(let i of this.trainersData.items)
+        {
+          this.st_day = i.st_day;
+          this.end_day = i.end_day;
+    
+          let date1 :Date = new Date(this.st_day);
+          let date2 :Date = new Date(this.end_day);
+    
+          let daysNumSec :any = date2.getTime()-date1.getTime();
+    
+          this.daysNum   = Math.floor(daysNumSec/(1000 * 60 * 60 * 24))   
+    
+        }
     })
 
    

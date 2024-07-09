@@ -3,7 +3,7 @@
     <div class="row rowSpacing  bg-white">
         <div class="heading d-flex  mb-4">
             <h5>المسارات التعليمية /  </h5>
-            <h5 class="headingLine mx-2"> مسار {{CourseData.title}} /</h5>
+            <h5 class="headingLine mx-2"> مسار {{CourseData.eduroute}} /</h5>
             <h5 class="mx-2 " >{{CourseData.title}} </h5>
         </div>
         <div class="col-md-3    d-flex p-2">
@@ -77,21 +77,22 @@
                             <div class="courseData px-2">
                                 <h5>{{CourseData.location}} </h5>
                                 <div class="d-flex courseTime">
-                                    <p>   </p>
+                                    <p>{{CourseData.location_details}}</p>
                                     <p class="px-1"></p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-8 googleMaps">
-                        <iframe
-                            width="600"
-                            height="450"
-                            frameborder="0"
-                            style="border:0"
-                            [src]="mapUrl"
-                            allowfullscreen>
-                        </iframe>
+                    <div class="col-md-8 " id="map">
+                        <google-map height="400px"
+                            width="750px"
+                            [center]="center"
+                            [zoom]="zoom"
+                            (mapClick)="moveMap($event)"
+                            (mapMousemove)="move($event)">
+                        </google-map>
+
+
                     </div>
                 </div>
             </div>

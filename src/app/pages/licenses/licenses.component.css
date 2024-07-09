@@ -12,7 +12,14 @@ i {
 }
 img {
   border-radius: 5px;
+
 }
 .save span {
   color: #FB9C46;
+}
+
+.image {
+  width: 400px;
+  height: 364px;
+  border-radius: 10px;
 }

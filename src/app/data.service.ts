@@ -47,10 +47,11 @@ export class DataService {
     return this._HttpClient.get(`https://ucti.com.sa/course/${id}/`)
 
   }
-  // postFormINData():Observable<any>
-  // {
-  //   return this._HttpClient.post(`https://ucti.com.sa/join-us-as-individual/`)
 
-  // }
-
+  getOpenionData():Observable<any> {
+    return this._HttpClient.get(`https://ucti.com.sa/reviews/`)
+  }
+  getValidation():Observable<any> {
+    return this._HttpClient.get(`https://ucti.com.sa/verifiations/`)
+  }
 }

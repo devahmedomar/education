@@ -1,77 +1,34 @@
-<section class="lines" id="linesId">
-  <div class="container-fluid py-4">
-    <div class="row">
-      <div class="col-md-11 mx-3">
-        <div class="edulines">
-          <h4>المسارات التدريبية</h4>
-          <p>يمكنك أن تجد مسارك المناسب وتبدأ به الآن.</p>
-        </div>
+<section class="lines" id="linesId" [class.fade-in]="true" [class.in-view]="inView"  [@fade]="inView ? 'in-view' : 'out-of-view'" >
+  <div class="container-fluid py-4  ">
+      <div class="row ">
+          <div class="col-md-11 mx-3 ">
+              <div class="edulines">
+                  <h4>المسارات التدريبية</h4>
+                  <p>يمكنك أن تجد مسارك المناسب وتبدأ به الآن.</p>
+              </div>
+          </div>
       </div>
-    </div>
   </div>
 
-  <div class="container-fluid traniningLine">
-    <a
-      *ngFor="let line of eduRoutes; let i = index"
-      [routerLink]="['/trainingLines', line.eid]"
-    >
-      <div
-        class="row d-flex px-4 py-5"
-        [ngClass]="{ rightCircle: i % 2 === 0, leftCircle: i % 2 !== 0 }"
-      >
-        <!---->
-        <div
-          class="circle1"
-          [ngClass]="{
-            'semi-circle-right': i % 2 === 0,
-            'semi-circle-left': i % 2 !== 0,
-            circle2: i === 1,
-            circle4: i === 3,
-            circle6: i === 6
-          }"
-        ></div>
-        <!--"-->
-        <div class="col-md-8 my-2 py-3">
-          <!---->
-          <div
-            class="line1"
-            [ngClass]="{
-              one1: i === 0,
-              two2: i === 1,
-              three3: i === 2,
-              four4: i === 3,
-              five5: i === 4,
-              six6: i === 5
-            }"
-          >
-            <div
-              class="lineContent"
-              [ngClass]="{
-                one: i === 0,
-                two: i === 1,
-                three: i === 2,
-                four: i === 3,
-                five: i === 4,
-                six: i === 5
-              }"
-            >
-              <!---->
-              <div class="imageContainer">
-                <!---->
-                <img [src]="line.image" class="img-fluid" />
-                <div
-                  class="textContainer d-flex justify-content-center align-items-center"
-                >
-                  <h1>1</h1>
-                </div>
+  <div class="container-fluid  traniningLine ">
+      <a *ngFor="let line of eduRoutes ; let i = index"     [routerLink]="['/trainingLines',line.eid]">
+          <div class="row  d-flex px-4 py-5  " [ngClass]="{'rightCircle':i%2 === 0, 'leftCircle': i%2 !== 0}"><!---->
+              <div class=" circle1" [ngClass]="{'semi-circle-right':i%2===0, 'semi-circle-left' : i%2 !==0 , 'circle2':i===1, 'circle4':i===3, 'circle6':i===6}"></div><!--"-->
+              <div class="col-md-8 my-2 py-3   " ><!---->
+                  <div class="line1 " [ngClass]="{'one1':i===0, 'two2':i===1, 'three3':i===2 , 'four4':i===3 , 'five5':i===4 , 'six6':i===5}">
+                      <div class="lineContent  " [ngClass]="{'one':i===0, 'two':i===1, 'three':i===2 , 'four':i===3 , 'five':i===4 , 'six':i===5}"><!---->
+                          <div class="imageContainer"  ><!---->
+                              <img [src]="line.image"  class="img-fluid">
+                              <div class="textContainer d-flex justify-content-center align-items-center" >
+                                  <h1 >{{i+1}}</h1>
+                              </div>
+                          </div>
+                          <h1 class="mx-2">{{line.title}}</h1>
+                          <p class="mx-2 ">{{line.description}}</p>
+                      </div>
+                  </div>
               </div>
-              <h1 class="mx-2">{{ line.title }}</h1>
-              <p class="mx-2">{{ line.description }}</p>
-            </div>
           </div>
-        </div>
-      </div>
-    </a>
+      </a>
   </div>
 </section>
-

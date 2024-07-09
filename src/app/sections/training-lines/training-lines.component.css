@@ -1,3 +1,15 @@
+:host {
+    display: block;
+  }
+  
+  .fade-in {
+    opacity: 0;
+    transition: opacity 4s ease-out;
+  }
+  
+  .fade-in.in-view {
+    opacity: 1;
+  }
 .container-fluid
 {
     padding-left: 4.9%;
@@ -309,7 +321,7 @@
     z-index: 99999;
 }
 
-.leftCircle  .textContainer
+.leftCircle .line1 .imageContainer .textContainer
 {
     width: 158.11px;
     height: 158.11px;
@@ -320,10 +332,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 99999999;
+    z-index: 999999;
 }
 
-.leftCircle  .textContainer .th1
+.leftCircle .line1 .imageContainer .textContainer h1
 {
     color: black    !important;
     font-size: 81.31px !important;
@@ -342,24 +354,25 @@
 }
 .leftCircle .line1 .lineContent h1
 {
-    font-size: 54.21px;
+    font-size: 50.21px;
     font-weight: 700;
     color: #33312C    ;
-    line-height: 99.38px;
+    line-height: 90.38px;
 }
 .rightCircle .line1 .lineContent p
 {
-    font-size: 27.1px;
+    font-size: 20.1px;
     font-weight: 400;
     color: #6C6C6C    ;
-    line-height: 36.59px;
+    line-height: 30.59px;
+    z-index: 999999;
 }
 .leftCircle .line1 .lineContent p
 {
-    font-size: 27.1px;
+    font-size: 20.1px;
     font-weight: 400;
     color: #6C6C6C    ;
-    line-height: 36.59px;
+    line-height: 30.59px;
 }
 
 
@@ -409,15 +422,25 @@
         left: -12%;
         top: -5px;
     }
-    .rightCircle .line1 .imageContainer .textContainer h2
+    .rightCircle .line1 .imageContainer .textContainer
+    {        
+        width: 40.11px;
+        height: 40.11px;
+    }
+    .leftCircle .line1 .imageContainer .textContainer
+    {        
+        width: 40.11px;
+        height: 40.11px;
+    }
+    .rightCircle .line1 .imageContainer .textContainer h1
     {
-        font-size: 35.31px;
+        font-size: 35.31px !important;
         font-weight: 400;
         line-height: 40.38px;
     }
-    .leftCircle .line1 .imageContainer .textContainer h2
+    .leftCircle .line1 .imageContainer .textContainer h1
     {
-        font-size: 35.31px;
+        font-size: 35.31px !important;
         font-weight: 600;
         line-height: 40.38px;
     }
@@ -434,7 +457,7 @@
         font-size: 10.21px;
         font-weight: 200;
         padding-top: 0px !important;
-        padding-right:20px ;
+        padding-right:0px ;
         line-height: 0px;
     }
     .rightCircle .line1 .lineContent p
@@ -442,7 +465,7 @@
         font-size: 6.1px;
         font-weight: 400;
         line-height: 8px;
-        margin-bottom: 0;
+        margin-bottom: 20 !important;
         padding-right: 20px;
     }
     .leftCircle .line1 .lineContent p
@@ -451,7 +474,7 @@
         font-weight: 400;
         line-height: 8px;
         margin-bottom: 0;
-        padding-right: 20px;
+        padding-right: 0px;
     }
     .col-md-8
     {
@@ -460,6 +483,7 @@
     }
     .rightCircle .line1 .lineContent
     {
+        height: 60px;
         position: relative;
         border: 4px solid #AC7FB9    ;
         border-left: none;
@@ -469,6 +493,7 @@
     }
     .leftCircle .line1 .lineContent
     {
+        height: 60px;
         position: relative;
         border: 4px solid #AC7FB9    ;
         border-left: none;
@@ -595,7 +620,7 @@
         border-bottom: 0;
         transform: rotate(90deg);
         position: absolute;
-        right: -8%;
+        right: 9%;
         top: 37%;
     }
     .semi-circle-left{
@@ -606,7 +631,7 @@
         border-bottom: 0;
         transform: rotate(-90deg);
         position: absolute;
-        left: -13%;
+        left: 5%;
         top: 39%;
     }
     .rightCircle .line1 .imageContainer
@@ -623,17 +648,32 @@
         left: -12%;
         top: -5px;
     }
-    .rightCircle .line1 .imageContainer .textContainer h2
+    .rightCircle .line1 .imageContainer .textContainer
+    {    
+        width: 60.11px;
+        height: 60.11px;
+    }
+    .leftCircle .line1 .imageContainer .textContainer
+    {    
+        width: 60.11px;
+        height: 60.11px;
+    }
+    .rightCircle .line1 .imageContainer .textContainer h1
     {
-        font-size: 40.31px;
+        font-size: 40.31px !important;
         font-weight: 400;
         line-height: 40.38px;
+        width: 100%;
+        text-align: center !important;
     }
-    .leftCircle .line1 .imageContainer .textContainer h2
+
+    .leftCircle .line1 .imageContainer .textContainer h1
     {
-        font-size: 40.31px;
-        font-weight: 600;
+        font-size: 40.31px !important;
+        font-weight: 400;
         line-height: 40.38px;
+        width: 100%;
+        text-align: center !important;
     }
     .rightCircle .line1 .lineContent h1
     {
@@ -674,11 +714,13 @@
     }
     .rightCircle .line1 .lineContent
     {
+        height: 86px;
         padding-right: 20px;
         margin: 0;
     }
     .leftCircle .line1 .lineContent
     {
+        height: 86px;
         padding-right: 20px;
         margin: 0;
     }
@@ -812,18 +854,33 @@
         left: -18%;
         top: -13px;
     }
-    .rightCircle .line1 .imageContainer .textContainer h2
-    {
-        font-size: 50.31px;
-        font-weight: 600;
-        line-height: 48.38px;
-
+    .rightCircle .line1 .imageContainer .textContainer
+    {        
+        width: 80.11px !important;
+        height: 80.11px !important;
     }
-    .lefttCircle .line1 .imageContainer .textContainer h2
+    .leftCircle .line1 .imageContainer .textContainer
+    {        
+        width: 80.11px !important;
+        height: 80.11px !important;
+    }
+    
+    .rightCircle .line1 .imageContainer .textContainer h1
     {
-        font-size: 50.31px;
-        font-weight: 400;
-        line-height: 40.38px;
+        font-size: 45.31px !important;
+        font-weight: 600 !important;
+        line-height: 48.38px;
+        text-align: right !important;
+        width: 100% !important;
+    }
+    .leftCircle .line1 .imageContainer .textContainer h1
+    {
+        font-size: 45.31px !important;
+        font-weight: 600 !important;
+        line-height: 48.38px;
+        text-align: right !important;
+        width: 100% !important;
+
     }
     .rightCircle .line1 .lineContent h1
     {
@@ -860,11 +917,13 @@
 
     .rightCircle .line1 .lineContent
     {
+        height: 124px;
         padding-right: 10px;
         margin: 0;
     }
     .leftCircle .line1 .lineContent
     {
+        height: 124px;
         padding-right: 20px;
         margin: 0;
     }

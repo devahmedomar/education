@@ -6,12 +6,12 @@
        <h6 class="usage-path mb-3">الرئيسية/<span class="me-2 mb-2">سياسة الاستخدام</span></h6>
     </div>
       <h6 class=" save mb-3">رقم السجل الضريبي<span class="me-2">:31516516</span></h6>
-      <div class="col-lg-4 col-md-6 col-sm-12">
+      <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let item of VerData ">
         <div class="card border-0" >
           <div class="card-body ">
-            <img class="w-100" src="assets/images/licnsspng.png"  alt="...">
+            <img class="w-100 image" [src]= "item.image" alt="...">
            <div class="d-flex align-items-center justify-content-between px-3">
-            <h5  class="card-title mt-3 ">اسم الترخيص </h5>
+            <h5  class="card-title mt-3 ">{{item.name}}</h5>
             <i class="fa-solid fa-download"></i>
            </div>
 
@@ -19,32 +19,8 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-4 col-md-6 col-sm-12">
-        <div class="card border-0" >
-          <div class="card-body ">
-            <img class="w-100" src="assets/images/licnsspng.png"  alt="...">
-           <div class="d-flex align-items-center justify-content-between px-3">
-            <h5  class="card-title mt-3 ">اسم الترخيص </h5>
-            <i class="fa-solid fa-download"></i>
-           </div>
 
 
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 col-sm-12">
-        <div class="card border-0" >
-          <div class="card-body ">
-            <img class="w-100" src="assets/images/licnsspng.png"  alt="...">
-           <div class="d-flex align-items-center justify-content-between px-3">
-            <h5  class="card-title mt-3 ">اسم الترخيص </h5>
-            <i class="fa-solid fa-download"></i>
-           </div>
-
-
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </div>

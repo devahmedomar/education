@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import {AbstractControl, FormControl , FormGroup ,ValidatorFn, Validators} from '@angular/forms'
 
 @Component({
   selector: 'app-jion-usas-company',
@@ -8,23 +9,40 @@ import { Component } from '@angular/core';
 })
 export class JionUSasCompanyComponent {
 
-  formData = {
-    cName:'',
-    cEmial:'',
-    loption:'',
-    eNumber:'',
-    courseName:'',
 
 
 
 
+
+
+  registerForm : FormGroup ;
+  constructor(private http:HttpClient) {
+    this.registerForm = new FormGroup({
+      companyName : new FormControl('', [Validators.required , Validators.minLength(2) , Validators.maxLength(20)]),
+      companyEmail : new FormControl('',  [Validators.required , Validators.email]),
+      companyLocationSelect : new FormControl('' , Validators.required),
+      companyRouteSelect : new FormControl('' , Validators.required),
+      companyEmployee : new FormControl('' , [Validators.required,Validators.pattern(/^[0-9]+$/) ]),
+    })
+  }
+  onSubmit(data:{
+    companyName:string,
+    companyEmail:string,
+    companyLocationSelect:string,
+    companyEmployee:number,
+    companyRouteSelect:string,
+    courseName:string
+
+  }) {
+
+    console.log(data);
+
+
+    this.http.post("https://ucti.com.sa/join-us-as-company/",data).subscribe((response)=>{
+
+
+    })
 
   }
-  constructor(private http:HttpClient) {}
-
-  onSubmit() {
-
-    // const baseUrl ="https://ucti.com.sa/join-us-as-company/"
-  this.http.post("https://ucti.com.sa/join-us-as-company/",this.formData)
 }
-}
+
