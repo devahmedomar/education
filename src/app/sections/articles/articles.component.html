@@ -15,7 +15,7 @@
               <div class="clock">  <i class="fa-regular fa-clock"></i> <span> منذ{{days}} ايام  </span></div>
               <h2 class="card-title">{{item.title}}</h2>
               <p class="card-text"> {{item.description |seemore}}</p>
-              <div class="readMore">قراءة المزيد..</div>
+              <div class="readMore" >قراءة المزيد..</div>
 
             </div>
           </div>
@@ -25,7 +25,7 @@
 
 
 
-      <button class="displyMore" type="button" [routerLink]="['/articles']">عرض المزيد</button>
+      <button *ngIf="NewsData.length >=3 " class="displyMore" type="button" [routerLink]="['/articles']">عرض المزيد</button>
 
 
     </div>

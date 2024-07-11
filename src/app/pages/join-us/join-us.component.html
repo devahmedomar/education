@@ -66,7 +66,11 @@
                     </div>
                 </div>
 
-                <button class="btn send my-4" type="submit">أرسل طلبك</button>
+
+
+
+                <button class="btn send my-4" [disabled]="!registerForm.valid">أرسل طلبك</button>
+
             </form>
 
         </div>

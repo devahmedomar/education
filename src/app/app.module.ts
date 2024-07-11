@@ -36,6 +36,7 @@ import {  HttpClientModule} from "@angular/common/http"
 import { CommonModule } from '@angular/common';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { SeemorePipe } from './seemore.pipe';
+import { SearchPipe } from './search.pipe';
 
 
 
@@ -69,6 +70,7 @@ import { SeemorePipe } from './seemore.pipe';
     JionUSasCompanyComponent,
     TeamComponent,
     SeemorePipe,
+    SearchPipe,
   ],
   imports: [
     BrowserModule,

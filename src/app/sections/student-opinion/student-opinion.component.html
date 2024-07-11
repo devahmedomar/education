@@ -1,7 +1,7 @@
 <div class="student-opinion" id="student-op">
   <div class="container">
     <div class="row align-items-center gy-4">
-      <div class="col-lg-6 col-md-12">
+      <div class="col-lg-6 col-md-12 " >
         <div class="text-content">
           <h1>بعض من آراء <span class="trainer">المتدربين</span></h1>
           <p>
@@ -10,7 +10,7 @@
           </p>
         </div>
       </div>
-      <div class="col-lg-6 col-md-12">
+      <div class="col-lg-6 col-md-12 " >
         <div class="poinion" *ngFor="let item of DataOPenion">
           <ul>
             <li *ngFor="let rate of getRange(item.rate)">
@@ -24,7 +24,7 @@
             </div>
             <div class="student-data">
               <h4>{{ item.name }}</h4>
-              <p>{{ item.grade_year }} {{ item.route }}</p>
+              <p> خريج مسار  {{ item.route }} سنة  {{ item.grade_year }}  </p>
             </div>
           </div>
           <div class="silder-controls">
@@ -35,14 +35,14 @@
               <li></li>
               <li class="active"></li>
             </ul>
-            <ul class="controls-arow">
+            <!-- <ul class="controls-arow">
               <li>
                 <i class="fa-solid fa-angle-right"></i>
               </li>
               <li class="left">
                 <i class="fa-solid fa-angle-left"></i>
               </li>
-            </ul>
+            </ul> -->
           </div>
         </div>
       </div>
