@@ -19,8 +19,8 @@
                     <div class="col-md-6 py-2 ">
                         <div class="">
                             <label class="form-label">الإٍسم بالكامل</label> <br>
-                            <input ngModel id="name" name="name" type="text" class="form-control" placeholder="اسمك بالكامل" formControlName="individualName">
-                            <div *ngIf="registerForm.get('individualName')?.errors != null && registerForm.get('individualName')?.touched " class="border borer-danger  m-2 w-75">
+                            <input ngModel id="name" name="name" type="text" class="form-control" placeholder="اسمك بالكامل" formControlName="name">
+                            <div *ngIf="registerForm.get('name')?.errors != null && registerForm.get('name')?.touched " class="border borer-danger  m-2 w-75">
                                 <small class="text-danger">من فضلك ادخل الاسم</small>
                             </div>
                         </div>
@@ -29,8 +29,8 @@
                         <div class="">
                             <label class="form-label">البريد الإلكتروني</label> <br>
 
-                            <input  ngModel id="email" name="email" type="email" class="form-control" placeholder="بريدك الإلكتروني" formControlName="individualEmail">
-                            <div *ngIf="registerForm.get('individualEmail')?.errors != null && registerForm.get('individualEmail')?.touched " class="border borer-danger  m-2 w-75">
+                            <input  ngModel id="email" name="email" type="email" class="form-control" placeholder="بريدك الإلكتروني" formControlName="email">
+                            <div *ngIf="registerForm.get('email')?.errors != null && registerForm.get('email')?.touched " class="border borer-danger  m-2 w-75">
                                 <small class="text-danger">البرايد الاكتروني غير صحيح</small>
                             </div>
                         </div>
@@ -42,8 +42,8 @@
                          <div class=" phoneInput  position-relative  ">
                             <label class="form-label">رقم جوال</label> <br>
 
-                            <input ngModel name="phone" id="phone" id="phone" type="tel" class="form-control"  placeholder="" formControlName="individualPhoneNumber">
-                            <div *ngIf="registerForm.get('individualPhoneNumber')?.errors != null && registerForm.get('individualPhoneNumber')?.touched " class="border borer-danger  m-2 w-50">
+                            <input ngModel name="phone" id="phone" id="phone" type="tel" class="form-control"  placeholder="" formControlName="phone">
+                            <div *ngIf="registerForm.get('phone')?.errors != null && registerForm.get('phone')?.touched " class="border borer-danger  m-2 w-50">
                                 <small class="text-danger">رقم الهاتف غير صحيح</small>
                             </div>
                         </div>
@@ -52,14 +52,14 @@
                         <div class="">
 
                             <label class form-label>اختار المسار التدريبي الذي ترغب بالانضمام له</label>
-                            <select class="form-select" formControlName="individualSelect" name="option" ngModel >
+                            <select class="form-select" formControlName="route" name="option" ngModel >
 
-                              <option selected>Choose...</option>
+                              <!-- <option selected>Choose...</option> -->
                               <option>Option 1</option>
                               <option>Option 2</option>
                               <option>Option 3</option>
                             </select>
-                            <div *ngIf="registerForm.get('individualSelect')?.errors != null && registerForm.get('individualSelect')?.touched " class="border borer-danger  m-2 w-75">
+                            <div *ngIf="registerForm.get('route')?.errors != null && registerForm.get('route')?.touched " class="border borer-danger  m-2 w-75">
                                 <small class="text-danger">يجب اختيار أحد المسارات</small>
                             </div>
                         </div>

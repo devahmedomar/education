@@ -15,10 +15,10 @@ export class JoinUsComponent  {
   registerForm : FormGroup ;
   constructor(private elementRef: ElementRef,private http:HttpClient) {
     this.registerForm = new FormGroup({
-      individualName : new FormControl('', [Validators.required , Validators.minLength(2) , Validators.maxLength(20)]),
-      individualEmail : new FormControl('',  [Validators.required , Validators.email]),
-      individualPhoneNumber : new FormControl ('',[Validators.required ,Validators.pattern(/^(?:(?:\+|00)966)?\s*0?5\d{8}$|^(?:(?:\+|00)20)?\s*1[0-2]\d{8}$/)]),
-      individualSelect : new FormControl('' , Validators.required),
+      name : new FormControl('', [Validators.required , Validators.minLength(2) , Validators.maxLength(20)]),
+      email : new FormControl('',  [Validators.required , Validators.email]),
+      phone : new FormControl ('',[Validators.required ,Validators.pattern(/^(?:(?:\+|00)966)?\s*0?5\d{8}$|^(?:(?:\+|00)20)?\s*1[0-2]\d{8}$/)]),
+      route : new FormControl('' , Validators.required),
     })
   }
 
@@ -42,17 +42,14 @@ export class JoinUsComponent  {
   }
 
   onSubmit(data:{
-    individualName:string,
-    individualEmail:string,
-    individualPhoneNumber:string,
-    individualSelect:string
+    name:string,
+    email:string,
+    phone:string,
+    route:string
   }) {
     console.log(data);
 
-
-    this.http.post("https://ucti.com.sa/join-us-as-individual/data.json",data).subscribe((response)=>{
-
-
+    this.http.post("https://ucti.com.sa/join-us-as-individual/",data).subscribe((response)=>{
     })
 
   }

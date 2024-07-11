@@ -18,20 +18,20 @@ export class JionUSasCompanyComponent {
   registerForm : FormGroup ;
   constructor(private http:HttpClient) {
     this.registerForm = new FormGroup({
-      companyName : new FormControl('', [Validators.required , Validators.minLength(2) , Validators.maxLength(20)]),
-      companyEmail : new FormControl('',  [Validators.required , Validators.email]),
-      companyLocationSelect : new FormControl('' , Validators.required),
-      companyRouteSelect : new FormControl('' , Validators.required),
-      companyEmployee : new FormControl('' , [Validators.required,Validators.pattern(/^[0-9]+$/) ]),
+      name : new FormControl('', [Validators.required , Validators.minLength(2) , Validators.maxLength(20)]),
+      email : new FormControl('',  [Validators.required , Validators.email]),
+      location : new FormControl('' , Validators.required),
+      route : new FormControl('' , Validators.required),
+      emp_no : new FormControl('' , [Validators.required,Validators.pattern(/^[0-9]+$/) ]),
     })
   }
   onSubmit(data:{
-    companyName:string,
-    companyEmail:string,
-    companyLocationSelect:string,
-    companyEmployee:number,
-    companyRouteSelect:string,
-    courseName:string
+    name:string,
+    email:string,
+    location:string,
+    emp_no:number,
+    route:string,
+    courses:string
 
   }) {
 

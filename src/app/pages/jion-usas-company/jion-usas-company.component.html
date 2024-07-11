@@ -18,22 +18,18 @@
                     <div class="col-md-6 py-2 ">
                         <div class="">
                             <label class="form-label">اسم الشركة </label> <br>
-
-
-
-                            <input ngModel type="text" class="form-control" placeholder="اسم الشركة " formControlName="companyName">
-                            <div *ngIf="registerForm.get('companyName')?.errors != null && registerForm.get('companyName')?.touched " class="border borer-danger  m-2 w-75">
+                            <input ngModel type="text" class="form-control" placeholder="اسم الشركة " formControlName="name">
+                            <div *ngIf="registerForm.get('name')?.errors != null && registerForm.get('name')?.touched " class="border borer-danger  m-2 w-75">
                                 <small class="text-danger">من فضلك ادخل الاسم</small>
                             </div>
-
                         </div>
                     </div>
                     <div class="col-md-6 py-2">
                         <div class="">
                             <label class="form-label">البريد الإلكتروني</label> <br>
 
-                            <input ngModel  name="cEmial" type="email" class="form-control" placeholder="بريد الشركة الإلكتروني" formControlName="companyEmail">
-                            <div *ngIf="registerForm.get('companyEmail')?.errors != null && registerForm.get('companyEmail')?.touched " class="border borer-danger  m-2 w-75">
+                            <input ngModel  name="email" type="email" class="form-control" placeholder="بريد الشركة الإلكتروني" formControlName="email">
+                            <div *ngIf="registerForm.get('email')?.errors != null && registerForm.get('email')?.touched " class="border borer-danger  m-2 w-75">
                                 <small class="text-danger">من فضلك أدخل البريد الإلكتروني الصحيح</small>
                             </div>
                         </div>
@@ -44,15 +40,16 @@
                     <div class="col-md-6  col-sm-12">
                          <div class="   ">
                             <label class="form-label"> موقع الشركة</label> <br>
-                            <select ngModel class="form-select" formControlName="companyLocationSelect">
+                            <!-- <select ngModel class="form-select" formControlName="companyLocationSelect">
 
                                 <option selected>موقع الشركة</option>
                                 <option>Option 1</option>
                                 <option>Option 2</option>
                                 <option>Option 3</option>
-                              </select>
-                              <div *ngIf="registerForm.get('companyLocationSelect')?.errors != null && registerForm.get('companyLocationSelect')?.touched " class="border borer-danger  m-2 w-75">
-                                <small class="text-danger">من فضلك أختر موقعا</small>
+                              </select> -->
+                              <input required class="form-control" type="text" name="location" id="location" formControlName="location">
+                              <div *ngIf="registerForm.get('location')?.errors != null && registerForm.get('location')?.touched " class="border borer-danger  m-2 w-75">
+                                <small class="text-danger">من فضلك ادخل  موقعا</small>
                             </div>
                         </div>
                     </div>
@@ -61,8 +58,8 @@
 
 
                             <label class form-label>عدد الموظفين المطلوب تدريبهم</label>
-                            <input ngModel type="number" class="form-control" placeholder="00  "  formControlName="companyEmployee">
-                            <div *ngIf="registerForm.get('companyEmployee')?.errors != null && registerForm.get('companyEmployee')?.touched " class="border borer-danger  m-2 w-75">
+                            <input ngModel type="number" class="form-control" placeholder="00  "  formControlName="emp_no">
+                            <div *ngIf="registerForm.get('emp_no')?.errors != null && registerForm.get('emp_no')?.touched " class="border borer-danger  m-2 w-75">
                                 <small class="text-danger">من فضلك ادخل عدد الموظفين</small>
                             </div>
                         </div>
@@ -72,12 +69,12 @@
                     <div class="col-md-6  col-sm-12">
                          <div class="   ">
                             <label class="form-label"> اختر المسار التدريبي  </label> <br>
-                            <select ngModel class="form-select" formControlName="companyRouteSelect" >
+                            <select ngModel class="form-select" formControlName="route" >
                                 <option >Option 1</option>
                                 <option>Option 2</option>
                                 <option>Option 3</option>
                               </select>
-                              <div *ngIf="registerForm.get('companyRouteSelect')?.errors != null && registerForm.get('companyRouteSelect')?.touched " class="border borer-danger  m-2 w-75">
+                              <div *ngIf="registerForm.get('route')?.errors != null && registerForm.get('route')?.touched " class="border borer-danger  m-2 w-75">
                                 <small class="text-danger">من فضلك اختر المسار التدريبي</small>
                             </div>
                         </div>
@@ -85,7 +82,7 @@
                     <div class="col-md-6 col-sm-12 mt-2">
                         <div class="">
                             <label class form-label>الدورات التدربيبة المطلوبة <span class="color">(اختياري)</span>   </label>
-                            <input ngModel type="text" class="form-control" placeholder="اكتب هنا " name="courseName">
+                            <input ngModel type="text" class="form-control" placeholder="اكتب هنا " name="courses">
                         </div>
                     </div>
                 </div>
