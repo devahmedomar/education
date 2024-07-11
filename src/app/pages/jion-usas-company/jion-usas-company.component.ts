@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import {AbstractControl, FormControl , FormGroup ,ValidatorFn, Validators} from '@angular/forms'
-
+import {AbstractControl, FormControl , FormGroup ,ReactiveFormsModule,ValidatorFn, Validators} from '@angular/forms'
+import { DataService } from 'src/app/data.service';
+// ReactiveFormsModule
 @Component({
   selector: 'app-jion-usas-company',
   templateUrl: './jion-usas-company.component.html',
@@ -11,14 +12,15 @@ export class JionUSasCompanyComponent {
 
 
 
+  selectedOption :any =[];
 
 
 
 
   registerForm : FormGroup ;
-  constructor(private http:HttpClient) {
+  constructor(private http:HttpClient,public DataService:DataService) {
     this.registerForm = new FormGroup({
-      name : new FormControl('', [Validators.required , Validators.minLength(2) , Validators.maxLength(20)]),
+      name : new FormControl('', [Validators.required , Validators.minLength(5) , Validators.maxLength(20)]),
       email : new FormControl('',  [Validators.required , Validators.email]),
       location : new FormControl('' , Validators.required),
       route : new FormControl('' , Validators.required),
@@ -43,6 +45,29 @@ export class JionUSasCompanyComponent {
 
     })
 
+
   }
+  ngOnInit() {
+    this.getData();
+  }
+   getData(){
+    return this.DataService.getEduRoutesData().subscribe((info)=>{
+
+      this.selectedOption = info.data ;
+      console.log(this.selectedOption)
+
+    })
+
+   }
+   rsetForm(){
+    this.registerForm.reset();
+   }
 }
+
+
+
+
+
+
+
 

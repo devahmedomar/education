@@ -20,7 +20,8 @@ import { ArticlesComponent } from './sections/articles/articles.component';
 
 const routes: Routes = [
   {
-    path:'', redirectTo:'home', pathMatch:'full'
+    path:'', 
+    component:HomeComponent
   },
   {
       path:'home',

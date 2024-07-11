@@ -19,8 +19,10 @@
                         <div class="">
                             <label class="form-label">اسم الشركة </label> <br>
                             <input ngModel type="text" class="form-control" placeholder="اسم الشركة " formControlName="name">
-                            <div *ngIf="registerForm.get('name')?.errors != null && registerForm.get('name')?.touched " class="border borer-danger  m-2 w-75">
-                                <small class="text-danger">من فضلك ادخل الاسم</small>
+                            <div *ngIf="registerForm.get('name')?.errors && registerForm.get('name')?.touched" class="text-danger">
+                              <small *ngIf="registerForm.get('name')!.errors?.['required']">من فضلك أدخل الاسم</small>
+                              <small *ngIf="registerForm.get('name')!.errors?.['minlength']">يجب أن يحتوي الاسم على الأقل على 5 أحرف</small>
+                              <small *ngIf="registerForm.get('name')!.errors?.['maxlength']">يجب أن يحتوي الاسم على الأقل على 20 حرفًا</small>
                             </div>
                         </div>
                     </div>
@@ -29,8 +31,9 @@
                             <label class="form-label">البريد الإلكتروني</label> <br>
 
                             <input ngModel  name="email" type="email" class="form-control" placeholder="بريد الشركة الإلكتروني" formControlName="email">
-                            <div *ngIf="registerForm.get('email')?.errors != null && registerForm.get('email')?.touched " class="border borer-danger  m-2 w-75">
-                                <small class="text-danger">من فضلك أدخل البريد الإلكتروني الصحيح</small>
+                            <div *ngIf="registerForm.get('email')?.errors && registerForm.get('email')?.touched" class="text-danger">
+                              <small *ngIf="registerForm.get('email')?.errors?.['required']">البريد الإلكتروني مطلوب</small>
+                              <small *ngIf="registerForm.get('email')?.errors?.['email']">البريد الإلكتروني غير صحيح</small>
                             </div>
                         </div>
 
@@ -40,13 +43,7 @@
                     <div class="col-md-6  col-sm-12">
                          <div class="   ">
                             <label class="form-label"> موقع الشركة</label> <br>
-                            <!-- <select ngModel class="form-select" formControlName="companyLocationSelect">
 
-                                <option selected>موقع الشركة</option>
-                                <option>Option 1</option>
-                                <option>Option 2</option>
-                                <option>Option 3</option>
-                              </select> -->
                               <input required class="form-control" type="text" name="location" id="location" formControlName="location">
                               <div *ngIf="registerForm.get('location')?.errors != null && registerForm.get('location')?.touched " class="border borer-danger  m-2 w-75">
                                 <small class="text-danger">من فضلك ادخل  موقعا</small>
@@ -55,8 +52,6 @@
                     </div>
                     <div class="col-md-6 col-sm-12 mt-2">
                         <div class="">
-
-
                             <label class form-label>عدد الموظفين المطلوب تدريبهم</label>
                             <input ngModel type="number" class="form-control" placeholder="00  "  formControlName="emp_no">
                             <div *ngIf="registerForm.get('emp_no')?.errors != null && registerForm.get('emp_no')?.touched " class="border borer-danger  m-2 w-75">
@@ -67,12 +62,11 @@
                 </div>
                 <div class="row ">
                     <div class="col-md-6  col-sm-12">
-                         <div class="   ">
+                         <div class="">
                             <label class="form-label"> اختر المسار التدريبي  </label> <br>
                             <select ngModel class="form-select" formControlName="route" >
-                                <option >Option 1</option>
-                                <option>Option 2</option>
-                                <option>Option 3</option>
+                                <option *ngFor="let option of selectedOption "  [value]="option.title"> {{option.title}}</option>
+
                               </select>
                               <div *ngIf="registerForm.get('route')?.errors != null && registerForm.get('route')?.touched " class="border borer-danger  m-2 w-75">
                                 <small class="text-danger">من فضلك اختر المسار التدريبي</small>
@@ -81,12 +75,12 @@
                     </div>
                     <div class="col-md-6 col-sm-12 mt-2">
                         <div class="">
-                            <label class form-label>الدورات التدربيبة المطلوبة <span class="color">(اختياري)</span>   </label>
-                            <input ngModel type="text" class="form-control" placeholder="اكتب هنا " name="courses">
+                            <label class="form-label" >الدورات التدربيبة المطلوبة <span class="color">(اختياري)</span>   </label>
+                            <input ngModel type="text" class="form-control" placeholder="اكتب هنا "  id="courses" formControlName="courses">
                         </div>
                     </div>
                 </div>
-                <button class="btn send my-4" [disabled]="!registerForm.valid">أرسل طلبك</button>
+                <button type="submit" class="btn send my-4" [disabled]="!registerForm.valid" (click)="rsetForm()" >أرسل طلبك</button>
             </form>
 
         </div>

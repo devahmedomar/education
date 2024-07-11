@@ -19,10 +19,16 @@
                     <div class="col-md-6 py-2 ">
                         <div class="">
                             <label class="form-label">الإٍسم بالكامل</label> <br>
+
                             <input ngModel id="name" name="name" type="text" class="form-control" placeholder="اسمك بالكامل" formControlName="name">
-                            <div *ngIf="registerForm.get('name')?.errors != null && registerForm.get('name')?.touched " class="border borer-danger  m-2 w-75">
-                                <small class="text-danger">من فضلك ادخل الاسم</small>
+                            <div *ngIf="registerForm.get('name')?.errors && registerForm.get('name')?.touched" class="text-danger">
+                              <small *ngIf="registerForm.get('name')!.errors?.['required']">من فضلك أدخل الاسم</small>
+                              <small *ngIf="registerForm.get('name')!.errors?.['minlength']">يجب أن يحتوي الاسم على الأقل على 5 أحرف</small>
+                              <small *ngIf="registerForm.get('name')!.errors?.['maxlength']">يجب أن يحتوي الاسم على الأقل على 20 حرفًا</small>
                             </div>
+
+
+
                         </div>
                     </div>
                     <div class="col-md-6 py-2">
@@ -30,10 +36,12 @@
                             <label class="form-label">البريد الإلكتروني</label> <br>
 
                             <input  ngModel id="email" name="email" type="email" class="form-control" placeholder="بريدك الإلكتروني" formControlName="email">
-                            <div *ngIf="registerForm.get('email')?.errors != null && registerForm.get('email')?.touched " class="border borer-danger  m-2 w-75">
-                                <small class="text-danger">البرايد الاكتروني غير صحيح</small>
+                            <div *ngIf="registerForm.get('email')?.errors && registerForm.get('email')?.touched" class="text-danger">
+                              <small *ngIf="registerForm.get('email')?.errors?.['required']">البريد الإلكتروني مطلوب</small>
+                              <small *ngIf="registerForm.get('email')?.errors?.['email']">البريد الإلكتروني غير صحيح</small>
                             </div>
                         </div>
+
 
                     </div>
                 </div>
@@ -42,22 +50,27 @@
                          <div class=" phoneInput  position-relative  ">
                             <label class="form-label">رقم جوال</label> <br>
 
+
                             <input ngModel name="phone" id="phone" id="phone" type="tel" class="form-control"  placeholder="" formControlName="phone">
-                            <div *ngIf="registerForm.get('phone')?.errors != null && registerForm.get('phone')?.touched " class="border borer-danger  m-2 w-50">
-                                <small class="text-danger">رقم الهاتف غير صحيح</small>
+                            <div *ngIf="registerForm.get('phone')?.errors && registerForm.get('phone')?.touched" class="text-danger">
+                              <small *ngIf="registerForm.get('phone')?.errors?.['required']">رقم الجوال مطلوب</small>
+                              <small *ngIf="registerForm.get('phone')?.errors?.['pattern']">رقم الجوال غير صحيح</small>
                             </div>
+
                         </div>
                     </div>
                     <div class="col-md-6 col-sm-12 mt-2 " >
                         <div class="">
 
-                            <label class form-label>اختار المسار التدريبي الذي ترغب بالانضمام له</label>
-                            <select class="form-select" formControlName="route" name="option" ngModel >
 
-                              <!-- <option selected>Choose...</option> -->
-                              <option>Option 1</option>
-                              <option>Option 2</option>
-                              <option>Option 3</option>
+                            <label class form-label>اختار المسار التدريبي الذي ترغب بالانضمام له</label>
+                            <select class="form-select" formControlName="route" name="route" ngModel >
+
+
+                              <option value="" disabled selected>المسار التدريبي</option>
+                              <option *ngFor="let option of selectedOption" [value]="option.title"> {{option.title}}</option>
+
+
                             </select>
                             <div *ngIf="registerForm.get('route')?.errors != null && registerForm.get('route')?.touched " class="border borer-danger  m-2 w-75">
                                 <small class="text-danger">يجب اختيار أحد المسارات</small>
@@ -69,7 +82,7 @@
 
 
 
-                <button class="btn send my-4" [disabled]="!registerForm.valid">أرسل طلبك</button>
+                <button type="submit" class="btn send my-4" [disabled]="!registerForm.valid" (click)="rsetForm()">أرسل طلبك</button>
 
             </form>
 
