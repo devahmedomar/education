@@ -1,5 +1,5 @@
 import { ViewportScroller } from '@angular/common';
-import { Component ,HostListener,ElementRef,OnInit, AfterViewInit, AfterViewChecked ,ViewChild } from '@angular/core';
+import { Component ,HostListener,OnInit, AfterViewChecked  } from '@angular/core';
 import { RouterLinkActive } from '@angular/router';
 @Component({
   selector: 'app-navbar',

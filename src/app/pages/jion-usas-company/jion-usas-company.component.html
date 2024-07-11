@@ -15,18 +15,21 @@
                         <div class="">
                             <label class="form-label">اسم الشركة </label> <br>
                             <input type="text" class="form-control" placeholder="اسم الشركة " formControlName="companyName">
-                            <div *ngIf="registerForm.get('companyName')?.errors != null && registerForm.get('companyName')?.touched " class="border borer-danger  m-2 w-75">
-                                <small class="text-danger">من فضلك ادخل الاسم</small>
-                            </div>
+                            <div *ngIf="registerForm.get('companyName')?.errors && registerForm.get('companyName')?.touched" class="text-danger">
+                                <small *ngIf="registerForm.get('companyName')!.errors?.['required']">من فضلك أدخل الاسم</small>
+                                <small *ngIf="registerForm.get('companyName')!.errors?.['minlength']">يجب أن يحتوي الاسم على الأقل على 5 أحرف</small>
+                                <small *ngIf="registerForm.get('companyName')!.errors?.['maxlength']">يجب أن يحتوي الاسم على الأقل على 20 حرفًا</small>
+                              </div>        
                         </div>
                     </div>
                     <div class="col-md-6 py-2">
                         <div class="">
                             <label class="form-label">البريد الإلكتروني</label> <br>
                             <input type="email" class="form-control" placeholder="بريد الشركة الإلكتروني" formControlName="companyEmail">
-                            <div *ngIf="registerForm.get('companyEmail')?.errors != null && registerForm.get('companyEmail')?.touched " class="border borer-danger  m-2 w-75">
-                                <small class="text-danger">من فضلك أدخل البريد الإلكتروني الصحيح</small>
-                            </div>
+                            <div *ngIf="registerForm.get('companyEmail')?.errors && registerForm.get('companyEmail')?.touched" class="text-danger">
+                                <small *ngIf="registerForm.get('companyEmail')?.errors?.['required']">البريد الإلكتروني مطلوب</small>
+                                <small *ngIf="registerForm.get('companyEmail')?.errors?.['email']">البريد الإلكتروني غير صحيح</small>
+                              </div>
                         </div>    
                     </div>
                 </div>
@@ -49,9 +52,10 @@
                         <div class="">
                             <label class form-label>عدد الموظفين المطلوب تدريبهم</label> 
                             <input type="text" class="form-control" placeholder="00  "  formControlName="companyEmployee">
-                            <div *ngIf="registerForm.get('companyEmployee')?.errors != null && registerForm.get('companyEmployee')?.touched " class="border borer-danger  m-2 w-75">
-                                <small class="text-danger">من فضلك ادخل عدد الموظفين</small>
-                            </div>
+                            <div *ngIf="registerForm.get('companyEmployee')?.errors && registerForm.get('companyEmployee')?.touched" class="text-danger">
+                                <small *ngIf="registerForm.get('companyEmployee')?.errors?.['required']">من فضلك أدخل عدد الموظفين</small>
+                                <small *ngIf="registerForm.get('companyEmployee')?.errors?.['pattern']">يجب أن يحتوي عدد الموظفين على أرقام فقط</small>
+                              </div>
                         </div>
                     </div>
                 </div>
@@ -60,9 +64,9 @@
                          <div class="   ">
                             <label class="form-label"> اختر المسار التدريبي  </label> <br>
                             <select class="form-select" formControlName="companyRouteSelect" >
-                                <option >Option 1</option>
-                                <option>Option 2</option>
-                                <option>Option 3</option>
+                                <option value="" disabled selected>المسار التدريبي</option>
+                                <option *ngFor="let option of selectedOption" [value]="option.title"> {{option.title}}</option>
+                                
                               </select>
                               <div *ngIf="registerForm.get('companyRouteSelect')?.errors != null && registerForm.get('companyRouteSelect')?.touched " class="border borer-danger  m-2 w-75">
                                 <small class="text-danger">من فضلك اختر المسار التدريبي</small>
