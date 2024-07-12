@@ -8,34 +8,7 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
   selector: 'app-student-opinion',
   templateUrl: './student-opinion.component.html',
   styleUrls: ['./student-opinion.component.css'],
-  // animations: [
-  //   trigger('slideInFromLeft', [
-  //     state('void', style({ transform: 'translateX(-100%)' })),
-  //     state('*', style({ transform: 'translateX(0)' })),
-  //     transition('void => *', animate('8s ease-out')),
-  //     transition('* => void', animate('8s ease-out'))
-  //   ]),
-  //   trigger('slideInFromRight', [
-  //     state('void', style({ transform: 'translateX(100%)' })),
-  //     state('*', style({ transform: 'translateX(0)' })),
-  //     transition('void => *', animate('4s ease-out')),
-  //     transition('* => void', animate('4s ease-out'))
-  //   ])
-  // ]
-  animations: [
-    trigger('slideInFromLeft', [
-      state('void', style({ transform: 'translateX(100%)',})),
-      state('*', style({ transform: 'translateX(0)', })),
-      transition('void => *', animate('3s ease-out')),
-      transition('* => void', animate('3s ease-out'))
-    ]),
-    trigger('slideInFromRight', [
-      state('void', style({ transform: 'translateX(-100%)', })),
-      state('*', style({ transform: 'translateX(0)',})),
-      transition('void => *', animate('2s ease-out')),
-      transition('* => void', animate('2s ease-in'))
-    ])
-  ]
+  
 })
 export class StudentOpinionComponent {
 
@@ -43,6 +16,25 @@ export class StudentOpinionComponent {
   rates:any = [0,1,2,3,4];
   rate!:number  ;
   finalRateArray:any=[]
+  inView: boolean = false;
+  isPrevActive = false;
+  isNextActive = false;
+
+  prevSlide(): void {
+    this.isPrevActive = true;
+    this.isNextActive = false;
+  }
+
+  nextSlide(): void {
+    this.isPrevActive = false;
+    this.isNextActive = true;
+  }
+  activeSlide: number = 0;
+
+  onSlideChange(event: any): void {
+    // Bootstrap uses a 'slid.bs.carousel' event when a slide transition completes
+    this.activeSlide = event.to; // Update activeSlide with the index of the newly active slide
+  }
 
 
   constructor(private _DataService:DataService,private elementRef: ElementRef) {
@@ -68,26 +60,16 @@ export class StudentOpinionComponent {
   leftAnimationState = 'void';
   rightAnimationState = 'void';
 
-
-  @ViewChild('leftColumn', { static: true }) leftColumnElement!: ElementRef;
-  @ViewChild('rightColumn', { static: true }) rightColumnElement!: ElementRef;
-
-
-
   @HostListener('window:scroll', ['$event'])
   checkScroll() {
-    if (this.leftColumnElement && this.isElementInViewport(this.leftColumnElement.nativeElement)) {
-      this.leftAnimationState = 'in';
-    } else {
-      this.leftAnimationState = 'void';
-    }
+    const componentTop = this.elementRef.nativeElement.getBoundingClientRect().top;
+    const viewportHeight = window.innerHeight;
+    this.inView = componentTop <= viewportHeight - 100; // Adjust threshold as needed
+  } 
 
-    if (this.rightColumnElement && this.isElementInViewport(this.rightColumnElement.nativeElement)) {
-      this.rightAnimationState = 'in';
-    } else {
-      this.rightAnimationState = 'void';
-    }
-  }
+
+
+
 
   private isElementInViewport(element: HTMLElement): boolean {
     const rect = element.getBoundingClientRect();

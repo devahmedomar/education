@@ -25,6 +25,7 @@ export class JionUSasCompanyComponent {
       location : new FormControl('' , Validators.required),
       route : new FormControl('' , Validators.required),
       emp_no : new FormControl('' , [Validators.required,Validators.pattern(/^[0-9]+$/) ]),
+      courses : new FormControl('')
     })
   }
   onSubmit(data:{

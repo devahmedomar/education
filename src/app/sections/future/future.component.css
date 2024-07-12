@@ -3,6 +3,24 @@
     padding-left: 4.9%;
     padding-right: 4.9%;
 }
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .paragraph {
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  .paragraph.appear {
+    visibility: visible; /* Make sure element is visible before animating */
+    animation: fadeIn 5s ease-out forwards;
+  }
 .future
 {
     background-color: #F8F9F9;

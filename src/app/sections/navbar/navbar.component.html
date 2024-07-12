@@ -1,39 +1,35 @@
 <nav class="navbar navbar-expand-sm navbar-light" [ngClass]="{'scroll-background': isScrolled}">
-  <div class="container-fluid navedit">
-      <a class="navbar-brand" href="#">
-          <img src="assets/images/logo.png" class="img-fluid" alt="القافله العالميه للتدريب">
+    <div class="container-fluid navedit">
+      <a class="navbar-brand">
+        <img src="assets/images/logo.png" class="img-fluid" alt="القافله العالميه للتدريب">
       </a>
       <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="collapsibleNavId">
-          <ul class="navbar-nav m-auto mt-2 mt-lg-0 ">
-              <li class="nav-item" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active-link">
-                  <a class="nav-link " routerLink="/home" aria-current="page" router>الرئيسية<span class="visually-hidden">(current)</span></a>
-              </li>
-              <li class="nav-item" routerLinkActive="active-link">
-                  <a class="nav-link "  routerLink="/weare">من نحن</a>
-              </li>
-              <li class="nav-item"  >
-
-                  <a class="nav-link " href="#linesId"   (click)="scrollToSection('#linesId')"[class.active]="isActive('linesId')"> المسارات التدريبية</a>
-              </li>
-              <li class="nav-item" >
-                  <a  class="nav-link "href="#top-trainer"   (click)="scrollToSection('#top-trainer')" [class.active]="isActive('top-trainer')">المدربين </a>
-               </li>
-              <li class="nav-item" >
-                  <a class="nav-link " href="#student-op"   (click)="scrollToSection('#student-op')" [class.active]="isActive('student-op')">اراء المدربين </a><!-- -->
-              </li>
-              <li class="nav-item" >
-                  <a class="nav-link " href="#articles1"   (click)="scrollToSection('#articles1')" [class.active]="isActive('articles1')">المقالات </a>
-
-              </li>
-              <li class="nav-item" routerLinkActive="active-link">
-                  <a class="nav-link" routerLink="/joinUs">اتصل بنا </a>
-              </li>
-          </ul>
-
+        <ul class="navbar-nav m-auto mt-2 mt-lg-0">
+          <li class="nav-item" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active-link">
+            <a class="nav-link" routerLink="" aria-current="page">الرئيسية<span class="visually-hidden">(current)</span></a>
+          </li>
+          <li class="nav-item" routerLinkActive="active-link">
+            <a class="nav-link" routerLink="/weare">من نحن</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="scrollToSection('training-lines')" [class.active]="isActive('training-lines')"> المسارات التدريبية</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="scrollToSection('top-rated')" [class.active]="isActive('top-rated')">المدربين </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="scrollToSection('student-opinion')" [class.active]="isActive('student-opinion')">اراء المدربين </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="scrollToSection('article')" [class.active]="isActive('article')">المقالات </a>
+          </li>
+          <li class="nav-item" routerLinkActive="active-link">
+            <a class="nav-link" routerLink="/joinUs">اتصل بنا </a>
+          </li>
+        </ul>
       </div>
-  </div>
-</nav>
-
+    </div>
+  </nav>

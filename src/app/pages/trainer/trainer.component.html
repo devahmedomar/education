@@ -61,13 +61,13 @@
     </div>
     <div id="section5" *ngIf="currentSection === 'section5'" class="row pt-3 px-2">
         <div *ngFor="let item of trainersData.items" class="col-md-6  trainerContainer px-3 py-3">
-            <div class="row    pt-2">
+            <div class="row  d-flex   pt-2">
                 <div class="col-md-1 ">
                     <div class="coursesImage">
-                        
+                        <img [src]="item.image" class="img-fluid" alt="course">
                     </div>
                 </div>
-                <div class="col-md-5   offset-md-1    ">
+                <div class="col-md-5 CourseContainer  offset-md-1    ">
                     <div class="courseData px-2">
                         <h5>{{item.title}} </h5>
                         <div class="d-flex courseTime">

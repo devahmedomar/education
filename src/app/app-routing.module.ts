@@ -17,15 +17,12 @@ import { ArticlesPagePreviewComponent } from './pages/articles-page-preview/arti
 import { TrainingLinesComponent } from './sections/training-lines/training-lines.component';
 import { TopRatedComponent } from './sections/top-rated/top-rated.component';
 import { ArticlesComponent } from './sections/articles/articles.component';
+import { AppComponent } from './app.component';
 
 const routes: Routes = [
   {
-    path:'', 
+    path:'',
     component:HomeComponent
-  },
-  {
-      path:'home',
-      component:HomeComponent
   },
   {
     path:'about',
@@ -112,6 +109,7 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes, {
     enableTracing:false,
     scrollPositionRestoration:"enabled",
+    anchorScrolling:"enabled"
   })
 
   ],

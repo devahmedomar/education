@@ -378,9 +378,38 @@
 
 @media screen and (min-width: 330px) and (max-width:501px)
 {
+    .col-md-11
+    {
+        padding: 0px !important;
+    }
+    .edulines
+    {
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important ;
+    }
+    .edulines h4
+    {
+        font-weight: 400;
+        font-size: 30px;
+        line-height: 35px;
+        color: #3F64AB;
+    }
+    .edulines p
+    {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 25px;
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important ;
+    }
     .lines
     {
         width: 330px !important ;
+    }
+   
+    .container-fluid
+    {
+        padding-bottom: 0px !important;
     }
     .row
     {

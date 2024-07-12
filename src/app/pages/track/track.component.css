@@ -187,8 +187,40 @@
 
 }
 }
-@media screen and (min-width: 320px )and (max-width:766px)
+@media screen and (min-width: 310px )and (max-width:766px)
 {
+
+    .trainingLines .trainingLinesContainer .trainingLinesBackground .trainingLinesOpacity
+    {
+        width: 93% !important;
+    }
+    .trackIntro p
+    {
+        font-size: 16px;
+        font-weight:400 ;
+        color: white    ;
+        line-height: 29.7px;
+        padding-bottom: 10px;
+        width: 100% !important;
+        overflow: hidden !important;      /* Hide overflowed content */
+        text-overflow: ellipsis !important; /* Show ellipsis for overflowing text */
+        white-space: normal !important; 
+        word-wrap: break-word;   /* Break long words to avoid overflow */
+
+    }
+    .coursesOut .coursesImage
+    {
+        background-color: black;
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+    }
+    .coursesOut .coursesImage img
+    {
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+    }
     .col-md-6 .row
     {
         display: block;
@@ -196,11 +228,45 @@
     .col-md-6 .row .col-md-1
     {
         width: 13%;
-        
     }
     .col-md-6 .row .col-md-4
     {
-        width: 40%;
+        width: 40% !important;
+        padding-right: 0px !important;
     }
-
+    .courseData 
+    {
+        width: 100%;
+        padding-right: 7px !important;
+        padding-top: 5px !important;        
+    }
+    .courseData h5
+    {
+        color: #33312C;   
+        font-size: 12px !important;
+        font-weight: 300;    
+        line-height: 2.4px;
+    }
+    .courseTime p
+    {
+        font-size: 12px !important;
+        font-weight: 300;    
+        line-height: 2.4px;
+    }
+    .coursesOut .showDetails
+    {
+        margin-bottom: 10px;
+    }
+    .coursesOut .showDetails a 
+    {
+        text-decoration: none;
+        color: #AC7FB9    ;
+        font-size: 12px;
+        font-weight: 300;    
+        line-height: 22.7px;
+        padding: 4px 8px 4px 8px ;
+        border-radius: 8px;
+        border: 1px solid  #AC7FB9;
+        gap: 10;
+    }
 }

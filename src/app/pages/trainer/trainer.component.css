@@ -290,7 +290,7 @@ a.active
        font-size: 12px;    
     } 
 }
-@media screen and (min-width: 250px )and (max-width:767px)
+@media screen and (min-width: 310px )and (max-width:767px)
 {
         .heading
     {
@@ -302,48 +302,81 @@ a.active
     {
         font-size: 14px !important;
     }
-        .rowSpacing .col-md-8 .tabs
+     .coursesImage 
     {
-        width: 100% !important;
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
     }
-    .rowSpacing .col-md-8 .tabs ul
+    .col-md-6 .row
     {
-        width: 100% !important;
-    }
-    .rowSpacing .col-md-8 .tabs li
-    {
-        width: 25% !important;
-        margin: 0 !important;
-        padding-right: 1px;
-    }
-    .rowSpacing .col-md-8 .tabs a
-    {
-        font-size: 11px;
-        width: 100% !important;
-        padding-right: 5px;
+        display: flex !important;
 
     }
     .col-md-6 .row .col-md-1
     {
-        width: 13%;
+        width: 13% !important;
+        margin-right: 2px !important;
     }
-    .col-md-6 .row .col-md-4
+    .CourseContainer
     {
-        width: 37%;        
-    } 
-    .col-md-6 .row .col-md-5
-    {
-        margin-right: 0px !important;
-        width: 50%;
-        padding-right: 0% !important;
-    }  
-    .col-md-6 .row .col-md-5 .courseData
-    {
-        margin-right: 2% !important;
-
+        width: 45% !important;
+        padding-right: 5px !important;
     }
-
- 
+   
+    .courseData 
+    {
+        padding-right: 7px !important;
+        padding-top: 5px !important;        
+    }
+    .courseData h5
+    {
+        font-size: 12px !important;
+        font-weight: 300;    
+        line-height: 10.4px;
+    }
+    .courseTime p
+    {
+        font-size: 12px !important;
+        font-weight: 300;    
+        line-height: 10.4px;
+    }
+    .showDetails
+    {
+        width: 35%;
+    }
+     .showDetails a 
+    {
+        text-decoration: none;
+        color: #AC7FB9    ;
+        font-size: 12px !important;
+        font-weight: 300 !important;    
+        line-height: 20.7px !important;
+        padding: 2px 4px 2px 4px !important ;
+        border-radius: 8px;
+        border: 1px solid  #AC7FB9;
+        gap: 10;
+    }
+    .tabs
+    {
+        width: 100% !important;
+        margin: auto;
+    }
+    .tabs ul
+    {
+        
+        margin-bottom: 10px;
+        flex-wrap: wrap;
+    }
+    .tabs li
+    {
+        width: 100%  !important;
+    }
+    .tabs a
+    {
+        width: 100% !important;
+        font-size: 14px;
+    }
 }
 
 

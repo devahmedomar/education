@@ -227,16 +227,45 @@ a.active
         font-size: 10px;        
     }
 }
-@media screen and (min-width: 200px )and (max-width:766px)
-{
+@media screen and (min-width: 310px )and (max-width:500px)
+{   
+    .heading h5
+    {
+        font-weight: 300;
+        font-size: 13px;
+        letter-spacing: -1.1%;
+    }
+    .imagContainer .state
+    {
+        width: 46px;
+        height:30px ;
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        background-color: white;
+        border-radius: 4px;
+        padding: 4px 8px 4px 8px;
+    } 
     .tabs
     {
         width: 100%;
     }
+    .tabs ul
+    {
+        padding: 0px !important;
+        margin-bottom: 10px;
+    }
+    .tabs li
+    {
+        margin: 4px !important;
+        padding-left: 0px !important;
+    }
     .tabs a
     {
-        width: 100%;
-        font-size: 13px;
+        width: 100% !important;
+        font-size: 10px;
+        padding: 0px !important;
+        margin: 0px !important;
     }
     .col-md-8 .paragContainer
     {
@@ -251,5 +280,16 @@ a.active
     {
         font-size: 14px;
     }
-
+    #map google-map
+    {
+        width: 300px !important;
+    }
+    .TimeData
+    {
+        margin-right: 20px !important;
+    }
+    .TimeData h5
+    {
+        font-size: 13px !important;
+    }
 }
