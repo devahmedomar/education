@@ -21,28 +21,20 @@
  -->
 
 
- <div class="container">
-
+ <div class="container" [class.paragraph]="true" [class.appear]="inView">
 
 
       <div class="text-container">
        <h2>
           <span class="highlight">للتواصل</span>مع المعهد والإستفسار عن أي شيء وكيفية    <span class="highlight">الإلتحاق</span>
        </h2>
-   </div>
-
-
+     </div>
 
        <div class="form-container">
       <form class="contact-form "  > <!--(ngSubmit)="onSubmit() [(ngModel)]="formData.email"-->
           <input type="email" placeholder="البريد الإلكتروني" class="email-input"  required="">
           <button type="submit" class="submit-button">إرسال</button>
       </form>
-  </div>
-
-
-
-
-
+       </div>
 
 </div>

@@ -3,23 +3,21 @@
     padding-left: 4.9%;
     padding-right: 4.9%;
 }
-@keyframes fadeIn {
+@keyframes scaleIn {
     0% {
+      transform: scale(1.5);
       opacity: 0;
     }
     100% {
+      transform: scale(1);
       opacity: 1;
     }
-  }
-  
-  .paragraph {
-    opacity: 0;
-    visibility: hidden;
-  }
-  
+  }  
+
   .paragraph.appear {
-    visibility: visible; /* Make sure element is visible before animating */
-    animation: fadeIn 5s ease-out forwards;
+    visibility: visible; 
+    animation: scaleIn 2s ease-out forwards; 
+    animation-delay: 100ms; 
   }
 .future
 {

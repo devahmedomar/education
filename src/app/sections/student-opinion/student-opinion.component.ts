@@ -8,6 +8,34 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
   selector: 'app-student-opinion',
   templateUrl: './student-opinion.component.html',
   styleUrls: ['./student-opinion.component.css'],
+  animations: [
+    trigger('slideIn', [
+      state('in', style({
+        transform: 'translateX(0)',
+        opacity: 1
+      })),
+      transition(':enter', [
+        style({ transform: 'translateX(-100%)', opacity: 0 }),
+        animate('0.5s ease-out')
+      ]),
+      transition(':leave', [
+        animate('0.5s ease-out', style({ transform: 'translateX(-100%)', opacity: 0 }))
+      ])
+    ]),
+    trigger('slideInRight', [
+      state('in', style({
+        transform: 'translateX(0)',
+        opacity: 1
+      })),
+      transition(':enter', [
+        style({ transform: 'translateX(100%)', opacity: 0 }),
+        animate('0.5s ease-out')
+      ]),
+      transition(':leave', [
+        animate('0.5s ease-out', style({ transform: 'translateX(100%)', opacity: 0 }))
+      ])
+    ])
+  ]
   
 })
 export class StudentOpinionComponent {
@@ -57,27 +85,32 @@ export class StudentOpinionComponent {
     return Array(num).fill(0).map((x, i) => i);
   }
 
-  leftAnimationState = 'void';
-  rightAnimationState = 'void';
+
+  ngOnInit() {
+    this.checkScroll(); // Initial check
+  }
 
   @HostListener('window:scroll', ['$event'])
-  checkScroll() {
-    const componentTop = this.elementRef.nativeElement.getBoundingClientRect().top;
-    const viewportHeight = window.innerHeight;
-    this.inView = componentTop <= viewportHeight - 100; // Adjust threshold as needed
-  } 
-
-
-
-
-
-  private isElementInViewport(element: HTMLElement): boolean {
-    const rect = element.getBoundingClientRect();
-    return (
-      rect.top >= 0 &&
-      rect.left >= 0 &&
-      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
+  onScroll() {
+    this.checkScroll();
   }
+
+  checkScroll() {
+    const elements = this.elementRef.nativeElement.querySelectorAll('.animate-from-right, .animate-from-left');
+    const viewportHeight = window.innerHeight;
+
+    elements.forEach((el: HTMLElement) => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top <= viewportHeight - 100 && rect.bottom >= 0) {
+        el.classList.add('appear');
+      } else {
+        el.classList.remove('appear');
+      }
+    });
+  }
+
+
+
+
+ 
 }

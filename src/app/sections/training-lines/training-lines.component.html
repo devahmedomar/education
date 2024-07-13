@@ -11,8 +11,10 @@
   </div>
 
   <div class="container-fluid  traniningLine ">
-      <a *ngFor="let line of eduRoutes ; let i = index"     [routerLink]="['/trainingLines',line.eid]">
-          <div class="row  d-flex px-4 py-5  " [ngClass]="{'rightCircle':i%2 === 0, 'leftCircle': i%2 !== 0}"><!---->
+      <a   *ngFor="let line of eduRoutes ; let i = index"     [routerLink]="['/trainingLines',line.eid]">
+          <div class="row  d-flex px-4 py-5 animat " [ngClass]="{'rightCircle':i%2 === 0, 'leftCircle': i%2 !== 0 ,
+          'animate': i % 2 === 0 && inView[i],
+          'leftanimate': i % 2 !== 0 && inView[i]}"><!---->
               <div class=" circle1" [ngClass]="{'semi-circle-right':i%2===0, 'semi-circle-left' : i%2 !==0 , 'circle2':i===1, 'circle4':i===3, 'circle6':i===6}"></div><!--"-->
               <div class="col-md-8 my-2 py-3   " ><!---->
                   <div class="line1 " [ngClass]="{'one1':i===0, 'two2':i===1, 'three3':i===2 , 'four4':i===3 , 'five5':i===4 , 'six6':i===5}">

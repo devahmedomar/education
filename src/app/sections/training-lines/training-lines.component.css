@@ -1,23 +1,9 @@
-:host {
-    display: block;
-  }
-  
-  .fade-in {
-    opacity: 0;
-    transition: opacity 4s ease-out;
-  }
-  
-  .fade-in.in-view {
-    opacity: 1;
-  }
+
 .container-fluid
 {
     padding-left: 4.9%;
     padding-right: 4.9%;
 }
- section .active-section {
-    border: 2px solid blue; /* Example: Highlight active section */
-  }
 .edulines h4
 {
     font-weight: 600;
@@ -31,6 +17,11 @@
     font-size: 36px;
     line-height: 44px;
 }
+@keyframes animate
+{
+    0%{right: -100%;}
+    100%{right: 0%;}
+}
 
 .rightCircle
 {
@@ -41,7 +32,6 @@
     border-top: none;
     position: relative;
 }
-
 .semi-circle-right{
     width: 360px;
     height: 174px;
@@ -53,7 +43,11 @@
     right: -8.5%;
     top: 29%;
 }
-
+@keyframes leftanimate
+{
+    0%{left: -100%;}
+    100%{left: 0%;}
+}
 .leftCircle
 {
     border-radius: 200px;
@@ -63,6 +57,18 @@
     border-top: none;
     position: relative;
 }
+.animate {
+    animation-name: animate;
+    animation-duration:2s;
+    animation-fill-mode: forwards;
+  }
+  
+  .leftanimate {
+    animation-name: leftanimate;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+  }
+
 .semi-circle-left
 {
     width: 360px;
