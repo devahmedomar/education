@@ -40,11 +40,13 @@ export class JionUSasCompanyComponent {
 
     console.log(data);
 
-
-    this.http.post("https://ucti.com.sa/join-us-as-company/",data).subscribe((response)=>{
-
+    if(this.registerForm.valid) {
+this.http.post("https://ucti.com.sa/join-us-as-company/",data).subscribe((response)=>{
+        this.registerForm.reset();
 
     })
+    }
+
 
 
   }
@@ -60,9 +62,7 @@ export class JionUSasCompanyComponent {
     })
 
    }
-   rsetForm(){
-    this.registerForm.reset();
-   }
+
 }
 
 

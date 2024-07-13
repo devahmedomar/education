@@ -37,6 +37,7 @@ import { CommonModule } from '@angular/common';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { SeemorePipe } from './seemore.pipe';
 import { SearchPipe } from './search.pipe';
+import { TrainerPageComponent } from './pages/trainer-page/trainer-page.component';
 
 
 
@@ -71,6 +72,7 @@ import { SearchPipe } from './search.pipe';
     TeamComponent,
     SeemorePipe,
     SearchPipe,
+    TrainerPageComponent,
   ],
   imports: [
     BrowserModule,

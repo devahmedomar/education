@@ -25,8 +25,8 @@
                 <p>{{item}}</p>
             </div>
         </div>
-      
-        
+
+
     </div>
 
     <div class="row">  <!--OutPuts -->
@@ -37,14 +37,14 @@
             </div>
         </div>
     </div>
-    
+
     <div class="row  py-5 "  > <!-- Courses-->
         <h4 class="py-2">دورات المسار</h4>
         <div *ngFor="let item of eduRoutesData.items" class=" col-md-6 col-xs-12 col-sm-12  coursesOut mb-3 ">
             <div class="row d-flex  pt-2">
                 <div class="col-md-1 ">
                     <div class="coursesImage">
-                        <img [src]="item.image" class="img-fluid" alt="course">
+                        <img [src]="item.image" class="img-fluid " alt="course">
                     </div>
                 </div>
                 <div class="col-xs-12 col-md-4  offset-md-3    ">
@@ -61,21 +61,21 @@
                 </div>
             </div>
         </div>
-   
+
     </div>
 
-    <div class="row py-3"> <!-- Trainers-->
+    <div class="row py-3 trainer-lines-row"> <!-- Trainers-->
         <h4>مدربين المسار</h4>
-        <div class="col-md-6 d-flex py-2">
-            <a class="text-center d-flex justify-content-center" *ngFor="let trainer of eduRoutesData.trainers"  class="trianerInfo mx-2" [routerLink]="['/trainers', trainer.tid]">
-               <div class="lineTrainers" >
+        <div class="col-md-6 d-flex py-2  trainer-container">
+            <a class="text-center d-flex justify-content-center  " *ngFor="let trainer of eduRoutesData.trainers"  class="trianerInfo mx-2" [routerLink]="['/trainers', trainer.tid]">
+               <div class="lineTrainers " >
                     <div class="imageContainer text-center  ">
                         <img [src]="trainer.image" alt="trainer-image" class="img-fluid">
                     </div>
                     <p class="">{{trainer.name}}</p>
                </div>
             </a>
-    
+
         </div>
     </div>
 </div>

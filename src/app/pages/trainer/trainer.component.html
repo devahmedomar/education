@@ -1,5 +1,5 @@
 <div class="container-fluid py-4 px-4 ">
-   
+
     <div class="row rowSpacing  bg-white">
         <div class="heading d-flex  mb-4">
             <h5>المسارات التعلمية /  </h5>
@@ -16,7 +16,7 @@
             </div>
         </div>
         <div  class="col-md-8 ">
- 
+
     <div class="tabs">
         <ul class="d-flex">
             <li class="section"  ><a  [class.active]="currentSection === 'section1'" (click)="navigateToSection('section1')"  >الشهادات العلمية</a></li>
@@ -29,24 +29,24 @@
     <div   id="section1" *ngIf="currentSection === 'section1'" class="certificates py-3 px-4">
         <ul>
             <li class="py-2" *ngFor="let trainer of trainersData.certifications">
-                <a  href="">{{trainer}} <i class="pi pi-arrow-up-left mx-2"></i></a> 
+                <a  href="">{{trainer}} <i class="pi pi-arrow-up-left mx-2"></i></a>
             </li>
         </ul>
     </div>
     <div id="section2" *ngIf="currentSection === 'section2'" class="certificates py-3 px-4">
         <ul>
             <li  class="py-2">
-                <a [attr.href]="trainersData.cv" >CV</a> 
+                <a [attr.href]="trainersData.cv" >CV</a>
             </li>
         </ul>
     </div>
     <div id="section3" *ngIf="currentSection === 'section3'" class="certificates pt-4 px-4">
         <ul>
             <li class="py-2" *ngFor="let trainer of trainersData.experience">
-                <a >{{trainer}} </a> 
+                <a >{{trainer}} </a>
             </li>
-        
-        
+
+
         </ul>
     </div>
     <div id="section4" *ngIf="currentSection === 'section4'" class="certificates pt-4 px-4">
@@ -64,7 +64,7 @@
             <div class="row  d-flex   pt-2">
                 <div class="col-md-1 ">
                     <div class="coursesImage">
-                        <img [src]="item.image" class="img-fluid" alt="course">
+                        <img [src]="item.image" class="img-fluid image" alt="course">
                     </div>
                 </div>
                 <div class="col-md-5 CourseContainer  offset-md-1    ">
@@ -81,9 +81,9 @@
                 </div>
             </div>
         </div>
-     
-    </div>        
-            
+
+    </div>
+
         </div>
     </div>
 </div>

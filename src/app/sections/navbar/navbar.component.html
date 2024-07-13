@@ -11,20 +11,18 @@
           <li class="nav-item" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active-link">
             <a class="nav-link" routerLink="" aria-current="page">الرئيسية<span class="visually-hidden">(current)</span></a>
           </li>
-          <li class="nav-item" routerLinkActive="active-link">
-            <a class="nav-link" routerLink="/weare">من نحن</a>
+<!--  (click)="scrollToSection('training-lines')" [class.active]="isActive('training-lines')" -->
+          <li class="nav-item">
+            <a class="nav-link" routerLink="training-lines" routerLinkActive="active"> المسارات التدريبية</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" (click)="scrollToSection('training-lines')" [class.active]="isActive('training-lines')"> المسارات التدريبية</a>
+            <a class="nav-link" routerLink="top-trainer" routerLinkActive="active">المدربين </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" (click)="scrollToSection('top-rated')" [class.active]="isActive('top-rated')">المدربين </a>
+            <a class="nav-link" routerLink="student-op" routerLinkActive="active">اراء المدربين </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" (click)="scrollToSection('student-opinion')" [class.active]="isActive('student-opinion')">اراء المدربين </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" (click)="scrollToSection('article')" [class.active]="isActive('article')">المقالات </a>
+            <a class="nav-link" routerLink="articlesSection" routerLinkActive="active">المقالات </a>
           </li>
           <li class="nav-item" routerLinkActive="active-link">
             <a class="nav-link" routerLink="/joinUs">اتصل بنا </a>

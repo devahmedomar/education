@@ -31,7 +31,7 @@
     border-radius:61.54px ;
 
 }
-.trianerInfo h5 
+.trianerInfo h5
 {
     font-weight: 600;
     font-size: 16px;
@@ -73,10 +73,10 @@
     color: gray;
     line-height: 29.98px;
 }
-a.active 
+a.active
 {
     color: #33312C    !important;
-    border-bottom: 1px solid #33312C   
+    border-bottom: 1px solid #33312C
 ;}
 
 .coursesImage
@@ -86,22 +86,22 @@ a.active
     height: 54px;
     border-radius: 6.75px;
 }
-.courseData 
+.courseData
 {
     margin-right: 17% !important ;
 }
 .courseData h5
 {
-    color: #33312C;   
+    color: #33312C;
     font-size: 14px;
-    font-weight: 600;    
+    font-weight: 600;
     line-height: 23px;
 }
 .courseData p
 {
-    color: #33312C;   
+    color: #33312C;
     font-size: 12px;
-    font-weight: 600;    
+    font-weight: 600;
     line-height: 19.8px;
 }
 
@@ -118,7 +118,7 @@ a.active
 }
 
 .certificates ul
-{ 
+{
     margin-right: 20px;
 }
 .certificates ul li
@@ -126,7 +126,7 @@ a.active
     list-style: square;
     color: #3F64AB ;
 }
-.certificates ul li a 
+.certificates ul li a
 {
     color:#3F64AB;
     font-weight: 600;
@@ -156,12 +156,12 @@ a.active
     justify-content: center;
     align-items: center;
 }
- .showDetails a 
+ .showDetails a
 {
     text-decoration: none;
     color: #AC7FB9    ;
     font-size: 18px;
-    font-weight: 500;    
+    font-weight: 500;
     line-height: 29.7px;
     padding: 4px 8px 4px 8px ;
     border-radius: 8px;
@@ -179,21 +179,21 @@ a.active
 {
     color: #3F64AB    ;
     font-weight: 400;
-    font-size: 12px;    
+    font-size: 12px;
     margin-right: 2px !important;
 }
 @media screen and (min-width: 1200px )and (max-width:1280px)
 {
-   
+
     .rowSpacing .col-md-6 .showDetails a
-    {   
+    {
        width: 220px !important;
        line-height: 24px;
        gap: 8px !important;
        padding-right:  14px; ;
-       font-size: 13px; 
-       font-weight: 400; 
-    } 
+       font-size: 13px;
+       font-weight: 400;
+    }
     .rowSpacing .col-md-6 .row .col-md-5
     {
         padding-right: 3%;
@@ -202,7 +202,7 @@ a.active
 }
 @media screen and (min-width: 1100px )and (max-width:1199px)
 {
-    
+
    .rowSpacing .col-md-3
     {
         width: 20% !important;
@@ -219,7 +219,7 @@ a.active
     }
     .rowSpacing .col-md-8
     {
-        width: 70% !important;   
+        width: 70% !important;
         padding-right: 0px !important;
         margin-right: 10px !important;
     }
@@ -250,7 +250,7 @@ a.active
     }
     .rowSpacing .col-md-8
     {
-        width: 75% !important;   
+        width: 75% !important;
         padding-right: 0px !important;
         margin-right: 10px !important;
     }
@@ -279,16 +279,16 @@ a.active
     }
     .col-md-6 .courseData h5,p
     {
-        font-size: 12px;    
+        font-size: 12px;
     }
     .col-md-6 .showDetails a
-    {   
+    {
        width: 120px !important;
        line-height: 22px;
        gap: 8px !important;
        padding-right:  12px; ;
-       font-size: 12px;    
-    } 
+       font-size: 12px;
+    }
 }
 @media screen and (min-width: 310px )and (max-width:767px)
 {
@@ -302,7 +302,7 @@ a.active
     {
         font-size: 14px !important;
     }
-     .coursesImage 
+     .coursesImage
     {
         width: 40px;
         height: 40px;
@@ -323,34 +323,34 @@ a.active
         width: 45% !important;
         padding-right: 5px !important;
     }
-   
-    .courseData 
+
+    .courseData
     {
         padding-right: 7px !important;
-        padding-top: 5px !important;        
+        padding-top: 5px !important;
     }
     .courseData h5
     {
         font-size: 12px !important;
-        font-weight: 300;    
+        font-weight: 300;
         line-height: 10.4px;
     }
     .courseTime p
     {
         font-size: 12px !important;
-        font-weight: 300;    
+        font-weight: 300;
         line-height: 10.4px;
     }
     .showDetails
     {
         width: 35%;
     }
-     .showDetails a 
+     .showDetails a
     {
         text-decoration: none;
         color: #AC7FB9    ;
         font-size: 12px !important;
-        font-weight: 300 !important;    
+        font-weight: 300 !important;
         line-height: 20.7px !important;
         padding: 2px 4px 2px 4px !important ;
         border-radius: 8px;
@@ -364,7 +364,7 @@ a.active
     }
     .tabs ul
     {
-        
+
         margin-bottom: 10px;
         flex-wrap: wrap;
     }
@@ -380,3 +380,8 @@ a.active
 }
 
 
+.image {
+  width: 100%;
+  height: 100%;
+  border-radius: 7px;
+}

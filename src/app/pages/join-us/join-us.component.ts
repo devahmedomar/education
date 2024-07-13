@@ -51,9 +51,12 @@ export class JoinUsComponent  {
     route:string
   }) {
     console.log(data);
-
-    this.http.post("https://ucti.com.sa/join-us-as-individual/",data).subscribe((response)=>{
+ if(this.registerForm.valid) {
+   this.http.post("https://ucti.com.sa/join-us-as-individual/",data).subscribe((response)=>{
+        this.registerForm.reset();
     })
+ }
+
 
   }
 
@@ -73,5 +76,4 @@ export class JoinUsComponent  {
     this.registerForm.reset();
    }
 }
-
 

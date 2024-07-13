@@ -15,11 +15,13 @@
           <div class="carousel-indicators " >
             <button [ngClass]="{'bg-info': activeSlide === 0, 'bg-light': activeSlide !== 0}"  type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
             <button [ngClass]="{'bg-info': activeSlide === 1, 'bg-light': activeSlide !== 1}" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button [ngClass]="{'bg-info': activeSlide === 2, 'bg-light': activeSlide !== 2}" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <!-- <button [ngClass]="{'bg-info': activeSlide === 2, 'bg-light': activeSlide !== 2}" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button> -->
           </div>
-        
+
           <div class="carousel-inner ">
-            <div class="poinion carousel-item active " *ngFor="let item of DataOPenion ">
+            <div   class="carousel-item"
+            [ngClass]="{ active: i === 0 }"
+            *ngFor="let item of DataOPenion; let i = index">
               <ul>
                 <li *ngFor="let rate of getRange(item.rate) ">
                   <i class="fa-solid fa-star"></i>
@@ -36,35 +38,25 @@
                 </div>
               </div>
               <div class="silder-controls">
-                <ul class="points">
-                  
-                
-                </ul>
-                <!-- <ul class="controls-arow">
-                  <li>
-                    <i class="fa-solid fa-angle-right"></i>
-                  </li>
-                  <li class="left">
-                    <i class="fa-solid fa-angle-left"></i>
-                  </li>
-                </ul> -->
+
+
               </div>
             </div>
           </div>
           <div class="d-flex arrowsButton">
-            <button [ngClass]="{'bg-info text-white': isPrevActive}" class="carousel-control-prev bg-info position-absolute " type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev" (click)="prevSlide()">
+            <button class="carousel-control-prev Previous position-absolute " type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev" (click)="prevSlide()">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Previous</span>
             </button>
-          
-            <button [ngClass]="{'bg-success text-white': isNextActive}" class="carousel-control-next bg-success poinion-absolute" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next" (click)="nextSlide()">
+
+            <button  class="Next carousel-control-next bg-success poinion-absolute" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next" (click)="nextSlide()">
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Next</span>
             </button>
-          
+
           </div>
         </div>
-        
+
       </div>
     </div>
   </div>

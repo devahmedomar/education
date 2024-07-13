@@ -9,7 +9,7 @@
   position: relative !important;
   bottom: 30%;
 }
-.carousel-indicators 
+.carousel-indicators
 {
   width: 20% !important;
   right: 10px !important;
@@ -174,3 +174,27 @@ margin: 0 10px;
     right: 55%;
   }
 }
+.carousel-control-next-icon, .carousel-control-prev-icon {
+  width: 20px !important;
+}
+
+
+.bg-success {
+  background-color: #3F64AB !important;
+}
+.Previous :focus {
+  background-color:  #3F64AB !important;
+}
+.carousel-control-next {
+  opacity: 1;
+}
+.control-prev {
+  opacity: 1;
+}
+.carousel-indicators button {
+  background-color:#3F64AB !important ;
+}
+.bg-info {
+  background-color:#3F64AB !important ;
+}
+

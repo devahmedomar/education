@@ -20,7 +20,7 @@
 }
 .trainingLines .trainingLinesContainer .trainingLinesBackground img
 {
- 
+
     height:333px;
     border-radius: 8px;
     width: 100% !important;
@@ -40,7 +40,7 @@
 {
     color: #F8F9F9;
     border-radius: 8px;
-}   
+}
 .trackIntro h3
 {
     font-size: 32px;
@@ -67,14 +67,14 @@
 }
 .goals i
 {
-    color: #AC7FB9;   
+    color: #AC7FB9;
     font-size: 12px;
     margin-top: 6px;
     margin-left: 4px;
 }
 .lineOuts p
 {
-    color: #33312C;   
+    color: #33312C;
     font-size: 18px;
     font-weight: 400;
 }
@@ -100,19 +100,19 @@
 }
 .coursesOut .courseData h5
 {
-    color: #33312C;   
+    color: #33312C;
     font-size: 18px;
-    font-weight: 600;    
+    font-weight: 600;
 }
-.coursesOut .courseData 
+.coursesOut .courseData
 {
     margin-right: 17% !important ;
 }
 .coursesOut .courseData p
 {
-    color: #33312C;   
+    color: #33312C;
     font-size: 16px;
-    font-weight: 600;    
+    font-weight: 600;
     line-height: 26.4px;
 }
 .coursesOut .showDetails
@@ -121,19 +121,19 @@
     justify-content: center;
     align-items: center;
 }
-.coursesOut .showDetails a 
+.coursesOut .showDetails a
 {
     text-decoration: none;
     color: #AC7FB9    ;
     font-size: 18px;
-    font-weight: 500;    
+    font-weight: 500;
     line-height: 29.7px;
     padding: 4px 8px 4px 8px ;
     border-radius: 8px;
     border: 1px solid  #AC7FB9;
     gap: 10;
 }
-.trianerInfo p 
+.trianerInfo p
 {
     font-weight: 600;
     font-size: 16px;
@@ -141,9 +141,7 @@
     line-height: 29.9px;
     color: black;
 }
-.lineTrainers
-{
-}
+
 .lineTrainers p
 {
     text-align: center;
@@ -153,10 +151,17 @@
     line-height: 29.28px;
     letter-spacing: 2%;
 }
+.trainer-container {
+  display: flex;
+  flex-wrap: wrap;
+}
 .imageContainer
 {
-   
+  border-radius: 61.43px;
+  width:80px !important ;
+  height: 80px !important;
 }
+
 .imageContainer img
 {
     border-radius: 61.43px;
@@ -165,7 +170,7 @@
 }
 @media screen and (min-width: 768px )and (max-width:1140px)
 {
-   
+
  .col-md-6 .courseData
  {
     width: 150px !important;
@@ -175,15 +180,15 @@
 }
 .col-md-6 .courseData h5,p
 {
-    font-size: 14px;    
+    font-size: 14px;
 }
 .col-md-6 .showDetails a{
-    
+
     width: 120px !important;
     line-height: 22px;
     gap: 8px !important;
     padding-right:  12px; ;
-    font-size: 14px;    
+    font-size: 14px;
 
 }
 }
@@ -204,7 +209,7 @@
         width: 100% !important;
         overflow: hidden !important;      /* Hide overflowed content */
         text-overflow: ellipsis !important; /* Show ellipsis for overflowing text */
-        white-space: normal !important; 
+        white-space: normal !important;
         word-wrap: break-word;   /* Break long words to avoid overflow */
 
     }
@@ -234,35 +239,35 @@
         width: 40% !important;
         padding-right: 0px !important;
     }
-    .courseData 
+    .courseData
     {
         width: 100%;
         padding-right: 7px !important;
-        padding-top: 5px !important;        
+        padding-top: 5px !important;
     }
     .courseData h5
     {
-        color: #33312C;   
+        color: #33312C;
         font-size: 12px !important;
-        font-weight: 300;    
+        font-weight: 300;
         line-height: 2.4px;
     }
     .courseTime p
     {
         font-size: 12px !important;
-        font-weight: 300;    
+        font-weight: 300;
         line-height: 2.4px;
     }
     .coursesOut .showDetails
     {
         margin-bottom: 10px;
     }
-    .coursesOut .showDetails a 
+    .coursesOut .showDetails a
     {
         text-decoration: none;
         color: #AC7FB9    ;
         font-size: 12px;
-        font-weight: 300;    
+        font-weight: 300;
         line-height: 22.7px;
         padding: 4px 8px 4px 8px ;
         border-radius: 8px;
@@ -270,3 +275,8 @@
         gap: 10;
     }
 }
+/* .image {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 10px;
+} */

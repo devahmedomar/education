@@ -18,6 +18,8 @@ import { TrainingLinesComponent } from './sections/training-lines/training-lines
 import { TopRatedComponent } from './sections/top-rated/top-rated.component';
 import { ArticlesComponent } from './sections/articles/articles.component';
 import { AppComponent } from './app.component';
+import { StudentOpinionComponent } from './sections/student-opinion/student-opinion.component';
+import { TrainerPageComponent } from './pages/trainer-page/trainer-page.component';
 
 const routes: Routes = [
   {
@@ -93,12 +95,24 @@ const routes: Routes = [
     component:ArticlesPagePreviewComponent
   },
   {
-    path:'lines',
+    path:'training-lines',
     component:TrainingLinesComponent
   },
   {
     path:'top-trainer',
     component:TopRatedComponent
+  },
+  {
+    path:'student-op',
+    component:StudentOpinionComponent
+  },
+  {
+    path:'articlesSection',
+    component:ArticlesComponent
+  },
+  {
+    path:'tainer',
+    component:TrainerPageComponent
   },
 
 
