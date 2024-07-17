@@ -47,6 +47,7 @@
     border-radius: 4px;
     padding: 4px 8px 4px 8px;
     gap: 10px;
+    text-align:center;
 }
 .imagContainer .state p
 {

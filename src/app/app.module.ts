@@ -38,7 +38,10 @@ import { GoogleMapsModule } from '@angular/google-maps';
 import { SeemorePipe } from './seemore.pipe';
 import { SearchPipe } from './search.pipe';
 import { TrainerPageComponent } from './pages/trainer-page/trainer-page.component';
-
+import { AnimateOnScrollModule } from 'primeng/animateonscroll';
+import { PrivacyComponent } from './pages/privacy/privacy.component';
+import { PaymentComponent } from './pages/payment/payment.component';
+import { ComplaintsSuggestionsComponent } from './pages/complaints-suggestions/complaints-suggestions.component';
 
 
 @NgModule({
@@ -73,6 +76,9 @@ import { TrainerPageComponent } from './pages/trainer-page/trainer-page.componen
     SeemorePipe,
     SearchPipe,
     TrainerPageComponent,
+    PrivacyComponent,
+    PaymentComponent,
+    ComplaintsSuggestionsComponent,
   ],
   imports: [
     BrowserModule,
@@ -83,7 +89,8 @@ import { TrainerPageComponent } from './pages/trainer-page/trainer-page.componen
     HttpClientModule,
     CommonModule,
     GoogleMapsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AnimateOnScrollModule
 
 
   ],

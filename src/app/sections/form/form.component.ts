@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, ElementRef, HostListener } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { error } from 'jquery';
 
 @Component({
@@ -8,8 +9,27 @@ import { error } from 'jquery';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent {
+  myform:FormGroup;
   inView: boolean = false;
-  constructor(private elementRef: ElementRef) {}
+
+  constructor(private http:HttpClient ,private elementRef: ElementRef) {
+   this.myform = new FormGroup( {
+    email : new FormControl('',[Validators.required,Validators.email])
+   })
+
+  }
+
+  onSubmite(data:{
+    email:string
+  }) {
+    const baseUrl = "https://ucti.com.sa/contactus/"
+    if(this.myform.valid) {
+       this.http.post(baseUrl,data).subscribe((respone)=>{
+      this.myform.reset()
+    })
+    }
+
+  }
 
   @HostListener('window:scroll', ['$event'])
   checkScroll() {
@@ -17,27 +37,6 @@ export class FormComponent {
     const viewportHeight = window.innerHeight;
     this.inView = componentTop <= viewportHeight - 100; // Adjust threshold as needed
   }
-  // formData={
-  //   email:''
-  // }
-
-  // constructor(private http:HttpClient) {
-  //   // console.log(this.formData.email);
-
-  // }
-
-  // onSubmit() {
-  //   const baseUrl = "url"
-  //   this.http.post(baseUrl,this.formData).subscribe((respone)=>{
-  //     console.log("send data done");
-  //   },(error)=>{
-  //     console.log("not send yet");
-
-  //   })
-  // }
-
-
-
-
+  
 
 }

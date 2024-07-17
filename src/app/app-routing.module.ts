@@ -20,12 +20,17 @@ import { ArticlesComponent } from './sections/articles/articles.component';
 import { AppComponent } from './app.component';
 import { StudentOpinionComponent } from './sections/student-opinion/student-opinion.component';
 import { TrainerPageComponent } from './pages/trainer-page/trainer-page.component';
+import { FutureComponent } from './sections/future/future.component';
+import { ComplaintsSuggestionsComponent } from './pages/complaints-suggestions/complaints-suggestions.component';
+import { PaymentComponent } from './pages/payment/payment.component';
+import { PrivacyComponent } from './pages/privacy/privacy.component';
 
 const routes: Routes = [
   {
     path:'',
     component:HomeComponent
   },
+  
   {
     path:'about',
     component:AboutComponent
@@ -114,6 +119,23 @@ const routes: Routes = [
     path:'tainer',
     component:TrainerPageComponent
   },
+  {
+    path:'future',
+    component:FutureComponent
+  },
+  {
+    path:'suggestions',
+    component:ComplaintsSuggestionsComponent
+  },
+  {
+    path:'payment',
+    component:PaymentComponent
+  },
+  {
+    path:'privacy',
+    component:PrivacyComponent
+  }
+
 
 
 ];

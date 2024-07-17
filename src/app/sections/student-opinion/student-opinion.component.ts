@@ -7,36 +7,7 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 @Component({
   selector: 'app-student-opinion',
   templateUrl: './student-opinion.component.html',
-  styleUrls: ['./student-opinion.component.css'],
-  animations: [
-    trigger('slideIn', [
-      state('in', style({
-        transform: 'translateX(0)',
-        opacity: 1
-      })),
-      transition(':enter', [
-        style({ transform: 'translateX(-100%)', opacity: 0 }),
-        animate('0.5s ease-out')
-      ]),
-      transition(':leave', [
-        animate('0.5s ease-out', style({ transform: 'translateX(-100%)', opacity: 0 }))
-      ])
-    ]),
-    trigger('slideInRight', [
-      state('in', style({
-        transform: 'translateX(0)',
-        opacity: 1
-      })),
-      transition(':enter', [
-        style({ transform: 'translateX(100%)', opacity: 0 }),
-        animate('0.5s ease-out')
-      ]),
-      transition(':leave', [
-        animate('0.5s ease-out', style({ transform: 'translateX(100%)', opacity: 0 }))
-      ])
-    ])
-  ]
-  
+  styleUrls: ['./student-opinion.component.css'], 
 })
 export class StudentOpinionComponent {
 
@@ -86,6 +57,9 @@ export class StudentOpinionComponent {
   }
 
 
+  private lastScrollTop = 0; // Track the last scroll position
+
+
   ngOnInit() {
     this.checkScroll(); // Initial check
   }
@@ -98,15 +72,26 @@ export class StudentOpinionComponent {
   checkScroll() {
     const elements = this.elementRef.nativeElement.querySelectorAll('.animate-from-right, .animate-from-left');
     const viewportHeight = window.innerHeight;
+    const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
     elements.forEach((el: HTMLElement) => {
       const rect = el.getBoundingClientRect();
-      if (rect.top <= viewportHeight - 100 && rect.bottom >= 0) {
+
+      // Check if the element is in view
+      const isInView = rect.top <= viewportHeight - 100 && rect.bottom >= 0;
+
+      // Apply the animation only if scrolling down and the element is in view
+      if (isInView && currentScrollTop > this.lastScrollTop) {
         el.classList.add('appear');
-      } else {
+      }
+
+      // Remove the animation class if scrolling up
+      if (currentScrollTop <= this.lastScrollTop) {
         el.classList.remove('appear');
       }
     });
+
+    this.lastScrollTop = currentScrollTop; // Update the last scroll position
   }
 
 

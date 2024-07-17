@@ -9,10 +9,10 @@ export class ArticleComponent {
   inView: boolean = false;
   constructor(private elementRef: ElementRef) {}
 
-  @HostListener('window:scroll', ['$event'])
-  checkScroll() {
-    const componentTop = this.elementRef.nativeElement.getBoundingClientRect().top;
-    const viewportHeight = window.innerHeight;
-    this.inView = componentTop <= viewportHeight - 100; // Adjust threshold as needed
-  }
+    @HostListener('window:scroll', ['$event'])
+    checkScroll() {
+      const componentTop = this.elementRef.nativeElement.getBoundingClientRect().top;
+      const viewportHeight = window.innerHeight;
+      this.inView = componentTop <= viewportHeight - 100; // Adjust threshold as needed
+    }
 }

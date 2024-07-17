@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { DataService } from 'src/app/data.service';
 
 @Component({
@@ -9,11 +9,12 @@ import { DataService } from 'src/app/data.service';
 export class TrainingLinesComponent  {
   eduRoutes: any = [];
 
-  inView: boolean[] = [];
+  @ViewChildren('contentContainer') contentContainers!: QueryList<ElementRef>;
+  inView: boolean = false;
  
   constructor(
-    private elementRef: ElementRef,
-    public _DataService: DataService
+    public _DataService: DataService,
+    public elementRef:ElementRef
   ) {
     this._DataService.getEduRoutesData().subscribe((info) => {
       this.eduRoutes = info.data;
@@ -22,36 +23,10 @@ export class TrainingLinesComponent  {
   }
 
 
-  ngAfterViewInit() {
-    this.checkInView();
-    window.addEventListener('scroll', () => this.checkInView());
-  }
-
   @HostListener('window:scroll', ['$event'])
-  onScroll() {
-    this.checkInView();
-  }
-
-  checkInView() {
+  checkScroll() {
+    const componentTop = this.elementRef.nativeElement.getBoundingClientRect().top;
     const viewportHeight = window.innerHeight;
-    // Type assertion to ensure elements are treated as HTMLElements
-    const elements = this.elementRef.nativeElement.querySelectorAll('.animat') as NodeListOf<HTMLElement>;
-
-    this.inView = Array.from(elements).map((element: HTMLElement) => {
-      const rect = element.getBoundingClientRect();
-      return rect.top <= viewportHeight - 100;
-    });
+    this.inView = componentTop <= viewportHeight - 100; // Adjust threshold as needed
   }
-
-
-
-
-
 }
-  // @HostListener('window:scroll', ['$event'])
-  // checkScroll() {
-  //   const componentTop =
-  //     this.elementRef.nativeElement.getBoundingClientRect().top;
-  //   const viewportHeight = window.innerHeight;
-  //   this.inView = componentTop <= viewportHeight - 100; // Adjust threshold as needed
-  // }

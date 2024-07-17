@@ -1,42 +1,6 @@
-@keyframes slideInFromRight {
-  0% {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-/* Keyframes for scaling and coming from the left */
-@keyframes slideInFromLeft {
-  0% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-/* Default state for the animated element */
-.col-lg-6 {
-  opacity: 0;
-  transition: opacity 0s;
-}
-
-/* Apply the slide animation when coming from the right */
-.animate-from-right.appear {
-  opacity: 1;
-  animation: slideInFromRight 2s ease-out forwards;
-}
-
-/* Apply the slide animation when coming from the left */
-.animate-from-left.appear {
-  opacity: 1;
-  animation: slideInFromLeft 2s ease-out forwards;
+.student-opinion
+{
+  margin-top: 10px;
 }
 #carouselExampleIndicators
 {

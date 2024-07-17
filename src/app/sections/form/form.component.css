@@ -1,4 +1,4 @@
-@keyframes slideOutToRight {
+@keyframes slideInFromRight {
   0% {
     opacity: 1;
     transform: translateX(0);
@@ -9,10 +9,10 @@
   }
 }
 
-@keyframes slideInFromLeftAppear {
+@keyframes slideInFromRightAppear {
   0% {
     opacity: 0;
-    transform: translateX(-100%);
+    transform: translateX(100%);
   }
   100% {
     opacity: 1;
@@ -21,11 +21,11 @@
 }
 
 .paragraph {
-  animation: slideOutToRight 1s ease-out forwards;
+  animation: slideInFromRight 1s ease-out forwards;
 }
 
 .paragraph.appear {
-  animation: slideInFromLeftAppear 1s ease-out forwards;
+  animation: slideInFromRightAppear 1s ease-out forwards;
 }
 
 
@@ -94,7 +94,7 @@
 }
 
 .submit-button {
-  background-color: #000000;
+  background-color: #000000 !important;
   color: #ffffff;
   border: none;
   padding: 15px 30px;
@@ -131,4 +131,16 @@
 .text-container .highlight {
   color: #5562ea;
   margin: 0 10px;
+}
+.body-color {
+  color: green !important;
+}
+
+.content-color {
+  background-color: white;
+  margin-top: 100px;
+}
+.text-danger {
+  padding-top: 14px;
+
 }
