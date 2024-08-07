@@ -1,4 +1,4 @@
-
+<!-- 
 <div  class="top-rated"  id="top-trainer">
   <div class="section-title">
     <h2 class="mt-3">  مدربينا المميزين</h2>
@@ -9,7 +9,7 @@
   </div>
   <div class="container-fluid  position-relative">
      <div class="row opacity-row gy-2 row-cols-xl-5 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 mb-2  " >
-      <div   class="col my-2 animat " #animat *ngFor="let trainer of trainers ; let i = index" ><!--[class.flipIn]="inView"  [class.flipOut]="true"-->
+      <div   class="col my-2 animat " #animat *ngFor="let trainer of trainers ; let i = index" >
         <div class="profile" [routerLink]="['/trainers', trainer.tid]" *ngIf="i <= 10 ">
           <div class="image-holder">
             <img [src]="trainer.image" alt=" ">
@@ -33,4 +33,5 @@
 
   </div>
 </div>
-
+ -->
+<!--[class.flipIn]="inView"  [class.flipOut]="true"-->

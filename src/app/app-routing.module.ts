@@ -24,6 +24,7 @@ import { FutureComponent } from './sections/future/future.component';
 import { ComplaintsSuggestionsComponent } from './pages/complaints-suggestions/complaints-suggestions.component';
 import { PaymentComponent } from './pages/payment/payment.component';
 import { PrivacyComponent } from './pages/privacy/privacy.component';
+import { ConditionsComponent } from './pages/conditions/conditions.component';
 
 const routes: Routes = [
   {
@@ -134,7 +135,13 @@ const routes: Routes = [
   {
     path:'privacy',
     component:PrivacyComponent
+  },
+  {
+    path:'conditions',
+    component:ConditionsComponent
   }
+
+
 
 
 

@@ -2,13 +2,14 @@ header
 {
     background-image: url('/assets/images/Vector\ \(1\).png');
     background-size: 100% 100%;    
-    margin-top: -80px !important;
+    margin-top: -130px;
 }
 
 .x
 {
     padding-left: 6% ;
     padding-right: 6%;
+    padding-top: 140px !important;
 }
 .contentSpecial
 {
@@ -135,6 +136,13 @@ header
 }
 @media screen and (min-width:322px) and (max-width: 574px)
 {
+    header
+    {
+    }
+    .x
+    {
+        padding-top: 15px !important;
+    }
     .cover
     {
         border: 2px solid #3F64AB;

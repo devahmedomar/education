@@ -42,6 +42,7 @@ import { AnimateOnScrollModule } from 'primeng/animateonscroll';
 import { PrivacyComponent } from './pages/privacy/privacy.component';
 import { PaymentComponent } from './pages/payment/payment.component';
 import { ComplaintsSuggestionsComponent } from './pages/complaints-suggestions/complaints-suggestions.component';
+import { ConditionsComponent } from './pages/conditions/conditions.component';
 
 
 @NgModule({
@@ -79,6 +80,7 @@ import { ComplaintsSuggestionsComponent } from './pages/complaints-suggestions/c
     PrivacyComponent,
     PaymentComponent,
     ComplaintsSuggestionsComponent,
+    ConditionsComponent,
   ],
   imports: [
     BrowserModule,

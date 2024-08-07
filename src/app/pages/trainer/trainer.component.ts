@@ -18,12 +18,14 @@ export class TrainerComponent {
 
   constructor (public _ActivatedRoute:ActivatedRoute, public _DataService:DataService){
     this.id=this._ActivatedRoute.snapshot.params['id'];
-    console.log(this.id);
 
     this._DataService.getTrainerDetails(this.id).subscribe((info)=>{
       this.trainersData = info.data; 
+      console.log(this.trainersData)
       for(let i of this.trainersData.items)
         {
+         
+
           this.st_day = i.st_day;
           this.end_day = i.end_day;
     

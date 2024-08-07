@@ -1,4 +1,7 @@
-
+.container-fluid
+{
+    padding-right: 4%;
+}
 .joinUs h5
 {
     font-size: 16px;

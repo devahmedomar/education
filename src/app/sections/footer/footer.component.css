@@ -68,13 +68,13 @@ ul li a {
 }
 
 
-.copy-Rights {
+/* .copy-Rights {
 display: flex;
 justify-content: space-between;
 width: 70%;
 margin: auto;
 flex-wrap: wrap;
-}
+} */
 .copy-Rights p {
   color:rgba(51, 49, 44, 60%);
 
@@ -91,3 +91,8 @@ flex-wrap: wrap;
   width: 100%;
 }
 
+.log img
+{
+  width: 120px;
+  height: 120px;
+}

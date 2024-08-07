@@ -68,6 +68,12 @@
     font-weight:400 ;
     font-size: 36.62px;
 }
+.col-md-4
+{
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
 .future .communicationandEffectiency
 {
     padding: 10px;
@@ -78,8 +84,9 @@
 {
     padding: 5px; 
     border-radius: 8px;
-    width: 64px;
-    height: 64px;
+    width: 60px;
+    height: 60px;
+    padding: 14px !important;
     background-color: #b6d3f7    ;
     font-size: 40px;
     color: #3F64AB;
