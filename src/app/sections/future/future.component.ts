@@ -25,9 +25,24 @@ export class FutureComponent {
       }
     })
   }
+  view="";
+  message="";
+  getMainData() {
+    this.dataSer.getMainData().subscribe({
+      next: (res: any) => {
+        this.view = res?.data[0]?.view || '';
+        this.message = res?.data[0]?.message || '';
+
+      },
+      error: (err) => {
+        console.log("errrrrrror", err);
+      }
+    })
+  }
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
     this.getGoals();
+    this.getMainData();
   }
 }
