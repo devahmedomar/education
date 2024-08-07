@@ -1,7 +1,7 @@
 header
 {
     background-image: url('/assets/images/Vector\ \(1\).png');
-    background-size: 100% 100%;    
+    background-size: 100% 100%;
     margin-top: -130px;
 }
 
@@ -49,6 +49,7 @@ header
     line-height: 38.4px
 
 }
+
 .remark
 {
     color: #3F64AB;
@@ -58,7 +59,7 @@ header
     width: 176px;
     margin-top: 99px;
 }
-.contact p 
+.contact p
 {
     font-weight: 400;
     font-size: 16px ;
@@ -120,7 +121,7 @@ header
     {
         font-size: 16px;
         width: 100%;
-    }  
+    }
     .cover
     {
         width: 220px !important;
@@ -160,14 +161,14 @@ header
     .cover img
     {
         width: 440px !important;
-        height: 580px !important;    
-    }    
-    
+        height: 580px !important;
+    }
+
 }
 @media screen and (min-width: 666px) and (max-width: 992px) {
 }
 @media screen and (min-width: 993px) and (max-width: 1213px) {
-     
+
 
 
 }

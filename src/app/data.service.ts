@@ -54,4 +54,14 @@ export class DataService {
   getValidation():Observable<any> {
     return this._HttpClient.get(`https://ucti.com.sa/verifiations/`)
   }
+  getMainData():Observable<any>{
+    return this._HttpClient.get(`https://ucti.com.sa/main/`)
+
+  }
+  getClients():Observable<any>{
+    return this._HttpClient.get(`https://ucti.com.sa/client/`);
+  }
+  getGoals():Observable<any>{
+    return this._HttpClient.get(`https://ucti.com.sa/goals/`);
+  }
 }
