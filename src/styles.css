@@ -27,5 +27,7 @@ ul li {
     text-decoration: none;
   }
 
-
+  .ng-image-slider .ng-image-slider-container .main{
+    height: 90px !important;
+  }
 

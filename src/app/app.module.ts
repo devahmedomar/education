@@ -43,6 +43,7 @@ import { PrivacyComponent } from './pages/privacy/privacy.component';
 import { PaymentComponent } from './pages/payment/payment.component';
 import { ComplaintsSuggestionsComponent } from './pages/complaints-suggestions/complaints-suggestions.component';
 import { ConditionsComponent } from './pages/conditions/conditions.component';
+import { NgImageSliderModule } from 'ng-image-slider';
 
 
 @NgModule({
@@ -92,7 +93,8 @@ import { ConditionsComponent } from './pages/conditions/conditions.component';
     CommonModule,
     GoogleMapsModule,
     ReactiveFormsModule,
-    AnimateOnScrollModule
+    AnimateOnScrollModule,
+    NgImageSliderModule
 
 
   ],

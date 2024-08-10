@@ -92,10 +92,10 @@ header
 }
 .cover div
 {
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 15px;
+    /* position: relative; */
+    /* top: 50%; */
+    /* transform: translateY(-50%); */
+    /* right: 15px; */
 }
 .cover div img
 {
@@ -174,4 +174,15 @@ header
 
 }
 @media screen and (min-width: 1214px) {
+}
+.img-cont{
+  width: 140%;
+  height: 100%;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.img-cont img{
+  width: 73%;
+  min-height: 100%;
 }
